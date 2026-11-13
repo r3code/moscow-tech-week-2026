@@ -1,0 +1,224 @@
+/* ============================================================
+   GLOBAL.CSS — Moscow Tech Week 2026 deck (REV 2)
+   Topic: 3x cheaper log storage with ClickHouse + Vector
+   Palette & layout language inherited from supplied templates
+   REV 2 changes: bigger base font sizes, less density per slide
+   Fonts: Montserrat (display) / Inter (body) / PT Serif italic (EN subtitle) / JetBrains Mono (code)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800;900&family=Inter:wght@300;400;500;600;700&family=PT+Serif:ital,wght@1,400;1,700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  /* ---- Palette (from template) ---- */
+  --bg:           #FFFFFF;
+  --bg-soft:      #F8F9FA;
+  --bg-tint:      #F0F7FF;
+  --bg-tint-2:    #E3F2FD;
+  --bg-tint-3:    #E0F2F1;
+  --primary:      #42A5F5;
+  --primary-deep: #1976D2;
+  --primary-darker:#0D47A1;
+  --accent:       #4DB6AC;
+  --accent-2:     #26C6DA;
+  --purple:       #5C6BC0;
+  --purple-2:     #7E57C2;
+  --purple-3:     #AB47BC;
+  --warn:         #FFA726;
+  --danger:       #EF5350;
+  --success:      #66BB6A;
+
+  --ink-900: #212121;
+  --ink-700: #424242;
+  --ink-600: #616161;
+  --ink-500: #757575;
+  --ink-400: #9E9E9E;
+  --ink-300: #BDBDBD;
+  --ink-200: #E0E0E0;
+  --ink-100: #EEEEEE;
+  --ink-050: #F5F5F5;
+
+  /* ---- Typography tokens (REV 3 — min 21px for body, 18px for mono) ---- */
+  --font-display: 'Montserrat', 'Inter', sans-serif;
+  --font-heading: 'Montserrat', 'Inter', sans-serif;
+  --font-body:    'Inter', 'Montserrat', sans-serif;
+  --font-italic:  'PT Serif', serif;
+  --font-mono:    'JetBrains Mono', 'Consolas', monospace;
+
+  --fs-display: 72px;
+  --fs-h1:      56px;
+  --fs-h2:      42px;
+  --fs-h3:      28px;
+  --fs-card-title: 26px;
+  --fs-body:    22px;   /* REV 3 — body text */
+  --fs-small:   21px;   /* REV 3 MIN — secondary text */
+  --fs-micro:   21px;   /* REV 3 MIN — labels (was 16) */
+  --fs-code:    18px;   /* REV 3 — mono only (FiraCode/JetBrains Mono) */
+  --fs-stat:    56px;
+}
+
+/* ---- Reset ---- */
+* { box-sizing: border-box; }
+body, html {
+  margin: 0; padding: 0;
+  height: 100%;
+  background: #F8F9FA;
+  font-family: var(--font-body);
+  color: var(--ink-700);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---- Slide canvas (1280x720 fixed) ---- */
+.slide-container {
+  width: 1280px;
+  height: 720px;
+  position: relative;
+  background-color: #FFFFFF;
+  font-family: var(--font-body);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+
+/* ---- Reusable accent bar (vertical, left of titles) ---- */
+.accent-bar {
+  width: 8px;
+  background-color: var(--primary);
+  border-radius: 3px;
+}
+
+/* ---- Title group: EN subtitle + RU main title ---- */
+.title-en {
+  font-family: var(--font-italic);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--accent);
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.title-cn {
+  font-family: var(--font-display);
+  font-size: 54px;
+  font-weight: 900;
+  color: var(--ink-900);
+  line-height: 1.1;
+  margin: 0;
+}
+.title-cn .accent { color: var(--primary); }
+
+/* ---- Page badge (top-right, replaces Vi.Tech logo) ---- */
+.page-badge {
+  position: absolute;
+  top: 36px;
+  right: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 30;
+}
+.page-badge .badge-num {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  color: var(--ink-400);
+  letter-spacing: 1.5px;
+}
+.page-badge .badge-bar {
+  width: 32px;
+  height: 2px;
+  background: var(--primary);
+}
+.page-badge .badge-label {
+  font-family: var(--font-italic);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--ink-400);
+}
+
+/* ---- Decorative circles ---- */
+.decorative-circle { position: absolute; border-radius: 50%; pointer-events: none; z-index: 0; }
+
+/* ---- Card surfaces (REV 2 — bigger padding) ---- */
+.surface-card {
+  background: #F8F9FA;
+  border-radius: 14px;
+  padding: 28px 30px;
+  border-left: 6px solid transparent;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+/* ---- Code block (REV 2 — bigger font) ---- */
+.code-block {
+  font-family: var(--font-mono);
+  font-size: var(--fs-code);
+  line-height: 1.65;
+  background: #0F2942;
+  color: #E3F2FD;
+  padding: 22px 26px;
+  border-radius: 12px;
+  border-left: 4px solid var(--primary);
+  white-space: pre;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(15,41,66,0.25);
+}
+.code-block .kw  { color: #82B1FF; font-weight: 600; }
+.code-block .str { color: #C5E1A5; }
+.code-block .num { color: #FFD54F; }
+.code-block .com { color: #90A4AE; font-style: italic; }
+.code-block .fn  { color: #80DEEA; }
+.code-block .hl  { background: rgba(255,167,38,0.18); padding: 1px 4px; border-radius: 3px; color: #FFE082; }
+
+/* ---- Numbered tag ---- */
+.num-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+}
+
+/* ---- KPI / stat circle (REV 2 — bigger) ---- */
+.stat-circle {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  border: 4px solid var(--bg-tint-3);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 22px;
+  color: var(--accent);
+}
+
+/* ---- Grid pattern background ---- */
+.grid-pattern {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(66,165,245,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(66,165,245,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ---- Wave decoration base ---- */
+.wave-decoration { position: absolute; pointer-events: none; z-index: 1; }
+
+/* ---- Hidden speaker notes ---- */
+.hidden, [data-notes] { display: none; }
+
+/* ---- Utility ---- */
+.text-primary { color: var(--primary); }
+.text-accent  { color: var(--accent); }
+.text-danger  { color: var(--danger); }
+.text-success { color: var(--success); }
+.text-warn    { color: var(--warn); }
+.font-mono    { font-family: var(--font-mono); }
+.font-italic  { font-family: var(--font-italic); font-style: italic; }
+.font-display { font-family: var(--font-display); }

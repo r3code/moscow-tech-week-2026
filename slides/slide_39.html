@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Slide 26 — CASE 4 · Найдена причина</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="global.css">
+<style>
+  body { display:flex; align-items:center; justify-content:center; min-height:100vh; }
+  .slide-container { display:flex; flex-direction:column; }
+  .top-header { padding:40px 70px 16px 70px; display:flex; align-items:center; justify-content:space-between; position:relative; z-index:10; }
+  .header-left { display:flex; align-items:center; gap:22px; }
+  .accent-bar-h { width:6px; height:70px; background:#FFA726; border-radius:3px; flex-shrink:0; }
+  .title-en-h { font-family:'PT Serif',serif; font-style:italic; font-weight:700; font-size:20px; color:#BF360C; letter-spacing:2px; text-transform:uppercase; margin-bottom:6px; line-height:1; }
+  .title-cn-h { font-family:'Montserrat',sans-serif; font-weight:900; font-size:38px; color:#212121; line-height:1.1; margin:0; }
+  .case-decor { position:absolute; top:30px; right:70px; font-family:'Montserrat',sans-serif; font-weight:900; font-size:80px; color:#FFF8E1; opacity:0.6; z-index:1; line-height:1; pointer-events:none; }
+  .content { flex:1; padding:20px 70px 40px 70px; display:flex; flex-direction:column; justify-content:center; gap:20px; position:relative; z-index:10; }
+  .code-title { font-family:'Montserrat',sans-serif; font-weight:700; font-size:18px; color:#BF360C; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px; }
+  .code-block { background:#0F2942; color:#E3F2FD; border-radius:14px; padding:24px 30px; border-left:5px solid #FFA726; font-family:'JetBrains Mono',monospace; font-size:18px; line-height:1.7; box-shadow:0 10px 30px rgba(15,41,66,0.3); white-space:pre; overflow:hidden; }
+  .code-block .kw { color:#82B1FF; font-weight:600; }
+  .code-block .str { color:#C5E1A5; }
+  .code-block .com { color:#90A4AE; font-style:italic; }
+  .code-block .hl { background:rgba(255,167,38,0.18); padding:1px 4px; border-radius:3px; color:#BF360C; }
+  .code-block .fn { color:#80DEEA; }
+  .banner { background:#FFFDE7; border-radius:12px; padding:22px 28px; border-left:6px solid #FFA726; display:flex; align-items:center; gap:16px; box-shadow:0 4px 14px rgba(255,167,38,0.10); }
+  .banner-icon { font-size:28px; color:#BF360C; flex-shrink:0; line-height:1; }
+  .banner-text { font-family:'Inter',sans-serif; font-weight:700; font-size:21px; color:#424242; line-height:1.5; }
+  .grid-pattern { position:absolute; inset:0; background-image: linear-gradient(rgba(255,167,38,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,167,38,0.04) 1px, transparent 1px); background-size:40px 40px; z-index:0; pointer-events:none; }
+  .deco-circle { position:absolute; border-radius:50%; pointer-events:none; z-index:0; }
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <div class="grid-pattern"></div>
+  <div class="deco-circle" data-decor aria-hidden="true" style="width:260px;height:260px;background:rgba(255,167,38,0.05);top:-80px;right:-80px;"></div>
+  <div class="deco-circle" data-decor aria-hidden="true" style="width:180px;height:180px;background:rgba(239,83,80,0.05);bottom:-50px;left:-50px;"></div>
+
+  <div class="case-decor" data-decor aria-hidden="true">CASE 4</div>
+
+  <div class="page-badge">
+    <span class="badge-num">39 / 51</span>
+    <span class="badge-bar"></span>
+  </div>
+
+  <header class="top-header">
+    <div class="header-left">
+      <div class="accent-bar-h"></div>
+      <div>
+        <div class="title-en-h">CASE 4 · ПРИЧИНА</div>
+        <h1 class="title-cn-h">Найдена причина</h1>
+      </div>
+    </div>
+  </header>
+
+  <main class="content">
+    <div>
+      <div class="code-title">00:24 — Найдена причина</div>
+      <div class="code-block"><span class="com"># timestamp в логе:</span>
+<span class="str">"2024-08-02T00:00:00Z"</span>
+<span class="com"># VRL парсил как:</span>
+<span class="hl">"24-08-02" → 24 год н. э.</span>
+<span class="com"># правление императора Тиберия</span>
+
+<span class="fn">to_unix_timestamp()</span> → <span class="kw">panic</span></div>
+    </div>
+
+    <div class="banner">
+      <i class="fas fa-exclamation-triangle banner-icon"></i>
+      <div class="banner-text">24 год н.э. вызвал переполнение int64 из-за наносекундной точности</div>
+    </div>
+  </main>
+
+  <aside data-notes>За 30 минут нашли причину. В логе был timestamp вида 24-08-02. VRL-функция to_unix_timestamp интерпретировала это как 24 год нашей эры. Дата хранится с точностью до наносекунд — при преобразовании в int64 произошло переполнение, и функция упала в panic. Один кривой timestamp — и весь конвейер логов останавливается.</aside>
+</div>
+</body>
+</html>

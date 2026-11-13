@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Slide 19 — CASE 3 · Как TTL попадает в ClickHouse</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="global.css">
+<style>
+  body { display:flex; align-items:center; justify-content:center; min-height:100vh; }
+  .slide-container { display:flex; flex-direction:column; }
+  .top-header { padding:40px 70px 16px 70px; display:flex; align-items:center; gap:22px; position:relative; z-index:10; }
+  .accent-bar-h { width:6px; height:70px; background:#5C6BC0; border-radius:3px; flex-shrink:0; }
+  .title-en-h { font-family:'PT Serif',serif; font-style:italic; font-weight:700; font-size:20px; color:#5C6BC0; letter-spacing:2px; text-transform:uppercase; margin-bottom:6px; line-height:1; }
+  .title-cn-h { font-family:'Montserrat',sans-serif; font-weight:900; font-size:38px; color:#212121; line-height:1.1; margin:0; }
+  .case-decor { position:absolute; top:18px; right:140px; font-family:'Montserrat',sans-serif; font-weight:900; font-size:80px; color:#E8EAF6; opacity:0.6; z-index:1; line-height:1; pointer-events:none; }
+  .content { flex:1; padding:20px 70px 40px 70px; display:flex; flex-direction:column; gap:20px; position:relative; z-index:10; }
+  .flow-row { display:flex; align-items:center; gap:16px; justify-content:center; margin-bottom:4px; }
+  .stage-card { background:#FFFFFF; border-radius:12px; padding:14px 20px; min-width:200px; display:flex; flex-direction:column; gap:6px; align-items:center; box-shadow:0 2px 10px rgba(0,0,0,0.06); }
+  .stage-card.s1 { border-top:4px solid #42A5F5; }
+  .stage-card.s2 { border-top:4px solid #FFA726; }
+  .stage-card.s3 { border-top:4px solid #4DB6AC; }
+  .stage-icon { font-size:28px; line-height:1; }
+  .stage-title { font-family:'Montserrat',sans-serif; font-weight:700; font-size:18px; color:#424242; line-height:1.1; }
+  .stage-sub { font-family:'Inter',sans-serif; font-size:16px; color:#757575; line-height:1.2; }
+  .arrow { color:#BDBDBD; font-size:24px; }
+  .code-card { background:#0F2942; color:#E3F2FD; border-radius:12px; padding:20px 26px; border-left:5px solid #5C6BC0; font-family:'JetBrains Mono',monospace; font-size:18px; line-height:1.7; max-width:800px; margin:0 auto; box-shadow:0 10px 24px rgba(15,41,66,0.25); white-space:pre; overflow:hidden; }
+  .code-card .ttl-title { font-family:'Montserrat',sans-serif; font-weight:700; font-size:16px; color:#9FA8DA; text-transform:uppercase; margin-bottom:8px; letter-spacing:1px; }
+  .code-card .kw { color:#82B1FF; font-weight:600; }
+  .code-card .str { color:#C5E1A5; }
+  .code-card .com { color:#90A4AE; font-style:italic; }
+  .code-card .hl { background:rgba(255,167,38,0.18); padding:1px 4px; border-radius:3px; color:#BF360C; }
+  .info-row { display:flex; gap:16px; }
+  .info-card { flex:1; border-radius:10px; padding:14px 20px; display:flex; flex-direction:column; gap:6px; }
+  .info-card.c1 { background:#E3F2FD; border-left:5px solid #42A5F5; }
+  .info-card.c2 { background:#FFF8E1; border-left:5px solid #FFA726; }
+  .info-card.c3 { background:#E0F2F1; border-left:5px solid #4DB6AC; }
+  .info-icon { font-size:24px; line-height:1; }
+  .info-title { font-family:'Montserrat',sans-serif; font-weight:700; font-size:18px; color:#424242; }
+  .info-text { font-family:'Inter',sans-serif; font-size:18px; color:#616161; line-height:1.4; }
+  .grid-pattern { position:absolute; inset:0; background-image: linear-gradient(rgba(66,165,245,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(66,165,245,0.04) 1px, transparent 1px); background-size:40px 40px; z-index:0; pointer-events:none; }
+  .deco-circle { position:absolute; border-radius:50%; pointer-events:none; z-index:0; }
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <div class="grid-pattern"></div>
+  <div class="deco-circle" data-decor aria-hidden="true" style="width:280px;height:280px;background:rgba(92,107,192,0.06);top:-100px;right:-80px;"></div>
+  <div class="deco-circle" data-decor aria-hidden="true" style="width:160px;height:160px;background:rgba(77,182,172,0.06);bottom:-50px;left:-40px;"></div>
+
+  <div class="case-decor" data-decor aria-hidden="true">CASE 3</div>
+
+  <div class="page-badge">
+    <span class="badge-num">30 / 51</span>
+    <span class="badge-bar"></span>
+  </div>
+
+  <header class="top-header">
+    <div class="accent-bar-h"></div>
+    <div>
+      <div class="title-en-h">CASE 3 · ПОТОК</div>
+      <h1 class="title-cn-h">Как TTL попадает в ClickHouse</h1>
+    </div>
+  </header>
+
+  <main class="content">
+    <div class="flow-row">
+      <div class="stage-card s1">
+        <i class="fas fa-user stage-icon" style="color:#1565C0;"></i>
+        <div class="stage-title">Разработчик</div>
+        <div class="stage-sub">пишет TTL в лог</div>
+      </div>
+      <i class="fas fa-chevron-right arrow"></i>
+      <div class="stage-card s2">
+        <i class="fas fa-cogs stage-icon" style="color:#BF360C;"></i>
+        <div class="stage-title">Vector Aggregator</div>
+        <div class="stage-sub">достаёт TTL из лога, валидация</div>
+      </div>
+      <i class="fas fa-chevron-right arrow"></i>
+      <div class="stage-card s3">
+        <i class="fas fa-database stage-icon" style="color:#00796B;"></i>
+        <div class="stage-title">ClickHouse</div>
+        <div class="stage-sub">пишет в поле LogTTL</div>
+      </div>
+    </div>
+
+    <div class="code-card"><span class="ttl-title">Поле в логе приложения (JSON)</span><span class="kw">{</span>
+  <span class="str">"msg"</span>: <span class="str">"Store me for 14 days!"</span>,
+  <span class="hl">"logging.vitech.team/ttl"</span>: <span class="str">"14d"</span>
+<span class="kw">}</span>  <span class="com"># 2d · 4d · 7d · 14d · 30d · 180d</span></div>
+
+    <div class="info-row">
+      <div class="info-card c1">
+        <i class="fas fa-user-cog info-icon" style="color:#1565C0;"></i>
+        <div class="info-title">Ответственность</div>
+        <div class="info-text">на разработчиках сервиса</div>
+      </div>
+      <div class="info-card c2">
+        <i class="fas fa-check-circle info-icon" style="color:#BF360C;"></i>
+        <div class="info-title">Валидация</div>
+        <div class="info-text">Vector агрегатор проверяет значения</div>
+      </div>
+      <div class="info-card c3">
+        <i class="fas fa-chart-line info-icon" style="color:#00796B;"></i>
+        <div class="info-title">Мониторинг</div>
+        <div class="info-text">контролируем отклонения</div>
+      </div>
+    </div>
+  </main>
+
+  <aside data-notes>Как TTL попадает в ClickHouse. TTL — это поле в самом логе приложения, в JSON. Разработчик пишет: msg — текст сообщения, и logging.vitech.team/ttl — срок хранения. Допустимые значения: 2d, 4d, 7d, 14d, 30d, 180d. Ответственность за выбор срока — на разработчиках: они знают свой сервис. Риски контролируем двумя механизмами. Первый — валидация при приёме логов: Vector отбрасывает недопустимые значения. Второй — мониторинг: видим отклонения.</aside>
+</div>
+</body>
+</html>

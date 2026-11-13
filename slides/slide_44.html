@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>AI-Ready Observability — Слайд 29</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="global.css">
+<style>
+  .slide-container { flex-direction: row; }
+
+  .image-section { width: 45%; position: relative; overflow: hidden; }
+  .image-section img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .overlay-gradient { position: absolute; inset: 0; background: rgba(124,92,192,0.20); pointer-events: none; }
+  .decorative-shape { position: absolute; bottom: -50px; left: -50px; width: 200px; height: 200px; border: 20px solid rgba(255,255,255,0.3); border-radius: 50%; pointer-events: none; }
+  .img-caption { position: absolute; bottom: 32px; left: 32px; color: #FFFFFF; }
+  .img-caption .cap-1 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 22px; line-height: 1.2; }
+  .img-caption .cap-2 { font-family: 'Inter', sans-serif; font-size: 18px; opacity: 0.9; margin-top: 4px; }
+
+  .content-section { flex: 1; padding: 50px 60px 50px 50px; display: flex; flex-direction: column; justify-content: center; background: #FFFFFF; position: relative; }
+
+  .top-header { margin-bottom: 22px; display: flex; align-items: center; gap: 22px; }
+  .accent-bar-v { width: 6px; height: 70px; background: #7E57C2; border-radius: 3px; }
+  .title-en { font-family: 'PT Serif', serif; font-style: italic; font-weight: 700; font-size: 20px; color: #7E57C2; letter-spacing: 2px; margin-bottom: 6px; text-transform: uppercase; line-height: 1; }
+  .title-cn { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 36px; color: #212121; line-height: 1.15; margin: 0; }
+
+  .note-card { margin-top: 18px; background: #F3E5F5; border-radius: 10px; padding: 14px 18px; border-left: 5px solid #7E57C2; display: flex; align-items: center; gap: 12px; }
+  .note-card i { color: #7E57C2; font-size: 22px; flex-shrink: 0; }
+  .note-card .note-text { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 21px; color: #424242; line-height: 1.3; }
+
+  .driver-list { display: flex; flex-direction: column; gap: 14px; margin-top: 24px; }
+  .driver-card { background: #F8F9FA; padding: 18px 22px; border-radius: 10px; border-left: 5px solid #7E57C2; }
+  .driver-card .dc-head { display: flex; align-items: center; gap: 12px; }
+  .driver-card .dc-head i { font-size: 24px; width: 28px; text-align: center; }
+  .driver-card h4 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 22px; color: #424242; margin: 0; line-height: 1.2; }
+  .driver-card p { font-family: 'Inter', sans-serif; font-size: 21px; color: #757575; line-height: 1.4; margin: 6px 0 0 40px; }
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <!-- Image section (left 45%) -->
+  <div class="image-section">
+    <img src="ai-dashboard.jpg" alt="AI dashboard">
+    <div class="overlay-gradient" data-decor></div>
+    <div class="decorative-shape" data-decor aria-hidden="true"></div>
+    <div class="img-caption">
+      <div class="cap-1">OTel Logs Data Model</div>
+      <div class="cap-2">Поиск логов через ClickStack MCP</div>
+    </div>
+  </div>
+
+  <!-- Content section (right 55%) -->
+  <div class="content-section">
+    <div class="top-header">
+      <div class="accent-bar-v"></div>
+      <div>
+        <h1 class="title-cn">AI-Ready Observability</h1>
+        <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:24px;color:#757575;margin-top:6px;">ClickStack MCP</div>
+      </div>
+    </div>
+
+    <div class="note-card">
+      <i class="fas fa-info-circle"></i>
+      <div class="note-text">Поиск логов стал возможен за счёт стандартизации OTel + ClickStack</div>
+    </div>
+
+    <div class="driver-list">
+      <div class="driver-card">
+        <div class="dc-head">
+          <i class="fas fa-broom" style="color:#C62828"></i>
+          <h4>Было: неструктурированный хаос</h4>
+        </div>
+        <p>Каждый сервис пишет логи в своём формате.</p>
+      </div>
+      <div class="driver-card">
+        <div class="dc-head">
+          <i class="fas fa-project-diagram" style="color:#1565C0"></i>
+          <h4>Стало: OTel Logs Data Model</h4>
+        </div>
+        <p>Единая схема для 200+ сервисов: Body, Attributes, Resource.</p>
+      </div>
+      <div class="driver-card">
+        <div class="dc-head">
+          <i class="fas fa-robot" style="color:#7E57C2"></i>
+          <h4>ClickStack MCP</h4>
+        </div>
+        <p>LLM строит SQL к полям Attributes. Time-to-insight: секунды вместо минут grep.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page badge -->
+  <div class="page-badge" style="top: 22px; right: 30px;">
+    <span class="badge-num">44 / 51</span>
+    <span class="badge-bar"></span>
+  </div>
+
+  <aside data-notes class="hidden">AI-Ready Observability — официальный MCP-сервер. Поиск логов стал возможен за счёт стандартизации OTel и применения ClickStack как средства просмотра логов. ClickStack знает схему OTel и строит SQL-запросы по полям Attributes и Resource. MCP-ассистент строит запрос вида SELECT body FROM logs WHERE resource.service_name = 'X'. Не угадывает поля, потому что схема формально описана.</aside>
+</div>
+</body>
+</html>
