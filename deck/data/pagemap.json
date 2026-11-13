@@ -1,0 +1,254 @@
+{
+  "total": 51,
+  "slides": [
+    {
+      "base_page": 1,
+      "steps": 0,
+      "files": [
+        "slide_01.html"
+      ]
+    },
+    {
+      "base_page": 2,
+      "steps": 0,
+      "files": [
+        "slide_02.html"
+      ]
+    },
+    {
+      "base_page": 3,
+      "steps": 2,
+      "files": [
+        "slide_03.html",
+        "slide_04.html",
+        "slide_05.html"
+      ]
+    },
+    {
+      "base_page": 6,
+      "steps": 0,
+      "files": [
+        "slide_06.html"
+      ]
+    },
+    {
+      "base_page": 7,
+      "steps": 1,
+      "files": [
+        "slide_07.html",
+        "slide_08.html"
+      ]
+    },
+    {
+      "base_page": 9,
+      "steps": 2,
+      "files": [
+        "slide_09.html",
+        "slide_10.html",
+        "slide_11.html"
+      ]
+    },
+    {
+      "base_page": 12,
+      "steps": 0,
+      "files": [
+        "slide_12.html"
+      ]
+    },
+    {
+      "base_page": 13,
+      "steps": 0,
+      "files": [
+        "slide_13.html"
+      ]
+    },
+    {
+      "base_page": 14,
+      "steps": 1,
+      "files": [
+        "slide_14.html",
+        "slide_15.html"
+      ]
+    },
+    {
+      "base_page": 16,
+      "steps": 0,
+      "files": [
+        "slide_16.html"
+      ]
+    },
+    {
+      "base_page": 17,
+      "steps": 0,
+      "files": [
+        "slide_17.html"
+      ]
+    },
+    {
+      "base_page": 18,
+      "steps": 0,
+      "files": [
+        "slide_18.html"
+      ]
+    },
+    {
+      "base_page": 19,
+      "steps": 0,
+      "files": [
+        "slide_19.html"
+      ]
+    },
+    {
+      "base_page": 20,
+      "steps": 1,
+      "files": [
+        "slide_20.html",
+        "slide_21.html"
+      ]
+    },
+    {
+      "base_page": 22,
+      "steps": 0,
+      "files": [
+        "slide_22.html"
+      ]
+    },
+    {
+      "base_page": 23,
+      "steps": 1,
+      "files": [
+        "slide_23.html",
+        "slide_24.html"
+      ]
+    },
+    {
+      "base_page": 25,
+      "steps": 0,
+      "files": [
+        "slide_25.html"
+      ]
+    },
+    {
+      "base_page": 26,
+      "steps": 1,
+      "files": [
+        "slide_26.html",
+        "slide_27.html"
+      ]
+    },
+    {
+      "base_page": 28,
+      "steps": 2,
+      "files": [
+        "slide_28.html",
+        "slide_29.html",
+        "slide_30.html"
+      ]
+    },
+    {
+      "base_page": 31,
+      "steps": 0,
+      "files": [
+        "slide_31.html"
+      ]
+    },
+    {
+      "base_page": 32,
+      "steps": 1,
+      "files": [
+        "slide_32.html",
+        "slide_33.html"
+      ]
+    },
+    {
+      "base_page": 34,
+      "steps": 1,
+      "files": [
+        "slide_34.html",
+        "slide_35.html"
+      ]
+    },
+    {
+      "base_page": 36,
+      "steps": 0,
+      "files": [
+        "slide_36.html"
+      ]
+    },
+    {
+      "base_page": 37,
+      "steps": 0,
+      "files": [
+        "slide_37.html"
+      ]
+    },
+    {
+      "base_page": 38,
+      "steps": 0,
+      "files": [
+        "slide_38.html"
+      ]
+    },
+    {
+      "base_page": 39,
+      "steps": 0,
+      "files": [
+        "slide_39.html"
+      ]
+    },
+    {
+      "base_page": 40,
+      "steps": 1,
+      "files": [
+        "slide_40.html",
+        "slide_41.html"
+      ]
+    },
+    {
+      "base_page": 42,
+      "steps": 1,
+      "files": [
+        "slide_42.html",
+        "slide_43.html"
+      ]
+    },
+    {
+      "base_page": 44,
+      "steps": 0,
+      "files": [
+        "slide_44.html"
+      ]
+    },
+    {
+      "base_page": 45,
+      "steps": 2,
+      "files": [
+        "slide_45.html",
+        "slide_46.html",
+        "slide_47.html"
+      ]
+    },
+    {
+      "base_page": 48,
+      "steps": 1,
+      "files": [
+        "slide_48.html",
+        "slide_49.html"
+      ]
+    },
+    {
+      "base_page": 50,
+      "steps": 0,
+      "files": [
+        "slide_50.html"
+      ]
+    },
+    {
+      "base_page": 51,
+      "steps": 0,
+      "files": [
+        "slide_51.html"
+      ]
+    }
+  ]
+}
