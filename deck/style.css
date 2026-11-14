@@ -122,33 +122,9 @@
   transition: none !important;
 }
 
-/* ---- Slide 25: position Shiki code block (anchor sibling) ---- */
-.mtw-slide .s25-codetitle + .slidev-code-wrapper,
-.mtw-slide .s25-codetitle + pre.slidev-code,
-.mtw-slide .s25-codetitle ~ .slidev-code-wrapper {
-  position: absolute;
-  left: 190px;
-  top: 250px;
-  width: 900px;
-  margin: 0;
-  z-index: 10;
-}
-.mtw-slide pre.slidev-code {
-  padding: 28px 32px !important;
-  border-radius: 14px !important;
-  border-left: 5px solid #4DB6AC !important;
-  font-family: var(--font-mono) !important;
-  font-size: 18px !important;
-  line-height: 1.7 !important;
-  white-space: pre !important;
-  overflow: hidden !important;
-  box-shadow: 0 10px 30px rgba(15,41,66,0.30) !important;
-  margin: 0 !important;
-}
-.mtw-slide .slidev-code .highlighted {
-  background: rgba(255,167,38,0.18) !important;
-  border-radius: 3px;
-}
+/* ---- Slide 25+: code blocks are verbatim legacy <pre> markup (inline styles),
+     carried 1:1 from slides/*.html. Shiki fences stay available for NEW code,
+     mtw2026-dark theme configured in setup/shiki.ts. ---- */
 
 /* ---- Slide 48: effects grid (legacy .effects-grid/.effect-card) ---- */
 .s48-grid {
