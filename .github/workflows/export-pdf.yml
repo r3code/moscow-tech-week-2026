@@ -1,0 +1,62 @@
+name: Export PDF
+
+# Ручной экспорт колоды в PDF (51 страница с --with-clicks).
+# Запуск: Actions → Export PDF → Run workflow.
+# Артефакт: mtw2026.pdf (retention 30 дней).
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+jobs:
+  export-pdf:
+    name: Export slides to PDF
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: deck
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: deck/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate version stamp
+        run: npm run gen:version
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Install Chromium for Playwright
+        # --with-deps тянет системные libs (libnss3, libatk, ...).
+        # Без них chromium падает с непонятной ошибкой.
+        run: npx playwright install --with-deps chromium
+
+      - name: Export slides to PDF
+        # --with-clicks — каждое v-click состояние = отдельная страница
+        # --wait-until networkidle — ждать все картинки
+        # --wait 1500 — пауза 1.5с после networkidle для надёжности
+        run: npx slidev export --format pdf --with-clicks --wait-until networkidle --wait 1500 --output dist/mtw2026.pdf --timeout 180000
+
+      - name: Show PDF info
+        run: ls -la dist/mtw2026.pdf
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mtw2026-pdf
+          path: deck/dist/mtw2026.pdf
+          if-no-files-found: error
+          retention-days: 30

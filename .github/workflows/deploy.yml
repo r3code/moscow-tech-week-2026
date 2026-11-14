@@ -1,0 +1,89 @@
+name: Deploy slides to GitHub Pages
+
+# Автоматически собирает deck/ в SPA и публикует на GitHub Pages
+# при пуше в main/master. Запускается и вручную (workflow_dispatch).
+#
+# URL после первого пуша: https://r3code.github.io/moscow-tech-week-2026/
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'deck/**'
+      - '.github/workflows/deploy.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Только один параллельный деплой; queued-раны не отменяем, доигрывают до конца.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build Slidev SPA
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: deck
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: deck/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate version stamp
+        # public/version.json: { version: "v{short-sha}_{YYYYMMDD}" }
+        # version.json в .gitignore — генерируется на каждой сборке,
+        # поэтому штамп всегда совпадает с текущим HEAD + датой UTC.
+        run: npm run gen:version
+
+      - name: Lint migration invariants
+        # Запрещаем: CDN шрифтов/иконок, mdc:true, font-size<18px,
+        # пустые строки внутри HTML-блоков (markdown-it рвёт блок).
+        run: npm run lint
+
+      - name: Build slides (GitHub Pages)
+        # --base = путь проектных Pages репозитория GitHub.
+        # Для user/repo → https://<user>.github.io/<repo>/.
+        env:
+          SLIDEV_BASE: /moscow-tech-week-2026/
+        run: npx slidev build --base /moscow-tech-week-2026/
+
+      - name: Add SPA fallback
+        # GitHub Pages не умеет rewrite на /index.html для SPA-роутинга Slidev.
+        # Копируем index.html → 404.html, чтобы прямые ссылки на /<slide-id>
+        # отдавали SPA, а не 404.
+        run: cp dist/index.html dist/404.html
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: deck/dist
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

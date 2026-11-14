@@ -1,0 +1,113 @@
+name: Export PPTX (images)
+
+# Ручной экспорт колоды в PPTX (каждый слайд — PNG, встроенный в blank layout).
+# Это «картинки в PPTX»: идеальный пиксельный паритет с legacy.
+# Запуск: Actions → Export PPTX (images) → Run workflow.
+# Артефакт: mtw2026.pptx + slides-png/ (retention 30/14 дней).
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+jobs:
+  export-pptx:
+    name: Export slides to PPTX (images)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: deck
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: deck/package-lock.json
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Generate version stamp
+        run: npm run gen:version
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Install Chromium for Playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: Install python-pptx
+        run: pip install --no-cache-dir python-pptx Pillow
+
+      - name: Export slides to PNG (per-slide)
+        # --per-slide создаёт слайды по одному в slides-png/NN.png
+        # --with-clicks → каждое клик-состояние отдельный PNG
+        run: |
+          mkdir -p dist/slides-png
+          npx slidev export --format png --per-slide --with-clicks --wait-until networkidle --wait 1500 --output dist/slides-png/slide --timeout 180000
+
+      - name: List exported PNGs
+        run: ls -la dist/slides-png/ | head -20 && echo "..." && ls dist/slides-png/ | wc -l
+
+      - name: Build PPTX from PNGs
+        run: |
+          python3 <<'PYEOF'
+          import os, glob, re
+          from pptx import Presentation
+          from pptx.util import Inches
+
+          # 16:9 standard PowerPoint slide (13.333 × 7.5 in)
+          prs = Presentation()
+          prs.slide_width = Inches(13.333)
+          prs.slide_height = Inches(7.5)
+
+          def natural_key(name):
+              return [int(t) if t.isdigit() else t for t in re.split(r'(\d+)', name)]
+
+          pngs = sorted(glob.glob('dist/slides-png/*.png'), key=natural_key)
+          print(f"PNG found: {len(pngs)}")
+          if not pngs:
+              raise SystemExit("No PNGs — export failed")
+
+          blank = prs.slide_layouts[6]  # 6 = Blank
+          for png in pngs:
+              slide = prs.slides.add_slide(blank)
+              slide.shapes.add_picture(
+                  png, left=0, top=0,
+                  width=prs.slide_width, height=prs.slide_height,
+              )
+
+          out = "dist/mtw2026.pptx"
+          prs.save(out)
+          print(f"Created: {out}")
+          print(f"Size: {os.path.getsize(out)} bytes")
+          print(f"Slides in PPTX: {len(prs.slides)}")
+          PYEOF
+
+      - name: Upload PPTX artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mtw2026-pptx
+          path: deck/dist/mtw2026.pptx
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload PNG artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mtw2026-png
+          path: deck/dist/slides-png/*.png
+          if-no-files-found: error
+          retention-days: 14

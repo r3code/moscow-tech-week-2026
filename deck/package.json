@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "slidev --open",
     "build": "slidev build",
+    "build:pages": "slidev build --base /moscow-tech-week-2026/",
     "gen:version": "node scripts/gen-version.mjs",
     "lint": "node scripts/lint-slides.mjs",
     "export:pdf": "slidev export --format pdf --with-clicks --output dist/mtw2026.pdf",
