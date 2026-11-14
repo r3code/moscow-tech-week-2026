@@ -33,15 +33,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Lint
+        # Lint before sed injection — checks __VERSION__ placeholder presence.
+        run: npm run lint
+
       - name: Generate version string
         run: |
           VERSION="$(date -u +%Y%m%d) rev. $(echo ${{ github.sha }} | cut -c1-7)"
           echo "Version: $VERSION"
           sed -i "s/__VERSION__/$VERSION/g" slides.md pages/*.md
           grep -rq "$VERSION" pages/ && echo "Version injected OK"
-
-      - name: Lint
-        run: npm run lint
 
       - name: Install Chromium for Playwright
         # --with-deps тянет системные libs (libnss3, libatk, ...).

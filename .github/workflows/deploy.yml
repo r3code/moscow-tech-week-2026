@@ -44,6 +44,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Lint migration invariants
+        # Запрещаем: CDN шрифтов/иконок, mdc:true, font-size<18px,
+        # пустые строки внутри HTML-блоков (markdown-it рвёт блок),
+        # наличие __VERSION__ плейсхолдера в 01-cover.md.
+        # Запускаем ДО sed-инъекции — иначе __VERSION__ уже заменён.
+        run: npm run lint
+
       - name: Generate version string
         # Формат: YYYYMMDD rev.<short-sha> — подставляется в __VERSION__ плейсхолдер.
         # working-directory: deck — пути относительны deck/.
@@ -52,11 +59,6 @@ jobs:
           echo "Version: $VERSION"
           sed -i "s/__VERSION__/$VERSION/g" slides.md pages/*.md
           grep -rq "$VERSION" pages/ && echo "Version injected OK"
-
-      - name: Lint migration invariants
-        # Запрещаем: CDN шрифтов/иконок, mdc:true, font-size<18px,
-        # пустые строки внутри HTML-блоков (markdown-it рвёт блок).
-        run: npm run lint
 
       - name: Build slides (GitHub Pages)
         # --base = путь проектных Pages репозитория GitHub.
