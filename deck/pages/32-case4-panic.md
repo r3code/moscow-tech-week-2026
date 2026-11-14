@@ -12,7 +12,7 @@ lineNumbers: false
   <div class="s32-deco-circle" style="width:300px;height:300px;background:rgba(77,182,172,0.05);top:-90px;left:-80px;"></div>
   <div class="s32-deco-circle" style="width:300px;height:300px;background:rgba(239,83,80,0.05);bottom:-100px;right:-90px;"></div>
   <div aria-hidden="true" style="position:absolute;top:30px;right:70px;font-family:'Montserrat',sans-serif;font-weight:900;font-size:80px;color:#FFEBEE;opacity:0.6;z-index:1;line-height:1;pointer-events:none;">CASE 4</div>
-  <PageBadge base="32" />
+  <PageBadge base="34" />
   <header style="padding:40px 70px 16px 70px;display:flex;align-items:center;gap:22px;position:relative;z-index:10;">
     <div style="width:6px;height:70px;background:#EF5350;border-radius:3px;flex-shrink:0;"></div>
     <div>
@@ -35,10 +35,10 @@ lineNumbers: false
       </div>
     </div>
     <div class="s32-col">
-      <div class="s32-case-card s32-card-panic">
+      <div v-click="1" class="s32-case-card s32-card-panic">
         <div class="s32-card-head">
           <FAIcon name="fire" :size="28" color="#C62828" />
-          <div v-click="1" class="s32-card-head-title">23:54 — Звонок</div>
+          <div class="s32-card-head-title">23:54 — Звонок</div>
         </div>
         <div class="s32-feature-list">
           <div class="s32-feature-item"><FAIcon name="bell" :size="21" color="#C62828" /><span>Звонок мониторинга</span></div>

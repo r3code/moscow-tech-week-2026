@@ -10,7 +10,7 @@ lineNumbers: false
 <div class="mtw-slide" style="background:#FFFFFF;flex-direction:column;">
   <div class="grid-pattern" aria-hidden="true"></div>
   <div class="decorative-circle" style="width:240px;height:240px;background:#E0F2F1;bottom:-100px;right:-80px;opacity:0.5;"></div>
-  <PageBadge base="9" />
+  <PageBadge base="10" />
   <div style="padding:40px 70px 16px 70px;display:flex;align-items:center;gap:22px;position:relative;z-index:5;">
     <div style="width:6px;height:70px;background:#42A5F5;border-radius:3px;"></div>
     <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:42px;color:#212121;line-height:1.05;">Переход на Vector+Clickhouse</div>
@@ -47,16 +47,16 @@ lineNumbers: false
           <div style="width:26%;font-family:'Inter',sans-serif;font-size:21px;color:#9E9E9E;text-transform:uppercase;">Команда</div>
           <div style="width:22%;font-family:'Inter',sans-serif;font-weight:600;font-size:21px;color:#C62828;text-decoration:none;">2 SRE + DevOps</div>
           <div style="width:6%;text-align:center;color:#00796B;font-size:22px;">→</div>
-          <div v-click="2" style="width:28%;font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;color:#1976D2;">1 SRE</div>
-          <div v-click="2" style="width:18%;text-align:right;">
+          <div v-click="1" style="width:28%;font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;color:#1976D2;">1 SRE</div>
+          <div v-click="1" style="width:18%;text-align:right;">
             <span style="background:#E0F2F1;color:#00796B;font-family:'Inter',sans-serif;font-size:18px;font-weight:700;padding:4px 10px;border-radius:12px;">без DevOps</span>
           </div>
         </div>
       </div>
     </div>
-    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:14px;">
+    <div v-click="2" style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:14px;">
       <div style="background:#FFFFFF;border-radius:14px;padding:22px 26px;box-shadow:0 8px 20px rgba(0,0,0,0.06);display:flex;align-items:center;gap:18px;border-left:6px solid #42A5F5;">
-        <div v-click="2" style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:44px;color:#1565C0;line-height:1;min-width:130px;">−78%</div>
+        <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:44px;color:#1565C0;line-height:1;min-width:130px;">−78%</div>
         <div style="flex:1;">
           <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:21px;color:#424242;">Снижение TCO</div>
           <div style="font-family:'Inter',sans-serif;font-size:18px;color:#9E9E9E;margin-top:2px;">810к → 180к руб./мес</div>
@@ -65,14 +65,14 @@ lineNumbers: false
       <div style="background:#FFFFFF;border-radius:14px;padding:22px 26px;box-shadow:0 8px 20px rgba(0,0,0,0.06);display:flex;align-items:center;gap:18px;border-left:6px solid #4DB6AC;">
         <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:44px;color:#00796B;line-height:1;min-width:130px;">×30</div>
         <div style="flex:1;">
-          <div v-click="2" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:21px;color:#424242;">Скорость подключения сервиса</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:21px;color:#424242;">Скорость подключения сервиса</div>
           <div style="font-family:'Inter',sans-serif;font-size:18px;color:#9E9E9E;margin-top:2px;">3–5 ч → 10 мин</div>
         </div>
       </div>
       <div style="background:#FFFFFF;border-radius:14px;padding:22px 26px;box-shadow:0 8px 20px rgba(0,0,0,0.06);display:flex;align-items:center;gap:18px;border-left:6px solid #5C6BC0;">
         <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:40px;color:#5C6BC0;line-height:1;min-width:130px;">1.5–2<br>FTE</div>
         <div style="flex:1;">
-          <div v-click="2" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:21px;color:#424242;">Высвобождено инженеров</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:21px;color:#424242;">Высвобождено инженеров</div>
           <div style="font-family:'Inter',sans-serif;font-size:18px;color:#9E9E9E;margin-top:2px;">Toil → Engineering</div>
         </div>
       </div>

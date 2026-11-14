@@ -11,7 +11,7 @@ lineNumbers: false
   <div class="grid-pattern" aria-hidden="true"></div>
   <div class="decorative-circle" style="width:380px;height:380px;background:radial-gradient(circle,rgba(77,182,172,0.12) 0%,transparent 70%);top:-130px;left:-110px;"></div>
   <div class="decorative-circle" style="width:260px;height:260px;background:radial-gradient(circle,rgba(255,167,38,0.10) 0%,transparent 70%);bottom:-90px;right:-60px;"></div>
-  <PageBadge base="20" />
+  <PageBadge base="22" />
   <div aria-hidden="true" style="position:absolute;top:30px;right:230px;z-index:1;opacity:0.6;font-family:'Montserrat',sans-serif;font-weight:900;font-size:80px;color:#E0F2F1;letter-spacing:4px;line-height:1;">CASE 2</div>
   <header style="position:relative;z-index:10;padding:40px 70px 16px 70px;display:flex;align-items:center;justify-content:space-between;">
     <div style="display:flex;align-items:center;gap:22px;">
@@ -50,8 +50,8 @@ lineNumbers: false
           </li>
         </ul>
       </div>
-      <div style="flex:1;background:#FFF8E1;border-radius:14px;padding:22px 26px;border-left:6px solid #FFA726;">
-        <div v-click="1" style="display:flex;align-items:center;gap:12px;">
+      <div v-click="1" style="flex:1;background:#FFF8E1;border-radius:14px;padding:22px 26px;border-left:6px solid #FFA726;">
+        <div style="display:flex;align-items:center;gap:12px;">
           <FAIcon name="lightbulb" :size="28" color="#BF360C" />
           <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:24px;color:#424242;margin:0;">Урок</h3>
         </div>

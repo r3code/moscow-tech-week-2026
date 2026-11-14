@@ -44,11 +44,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Generate version stamp
-        # public/version.json: { version: "v{short-sha}_{YYYYMMDD}" }
-        # version.json в .gitignore — генерируется на каждой сборке,
-        # поэтому штамп всегда совпадает с текущим HEAD + датой UTC.
-        run: npm run gen:version
+      - name: Generate version string
+        # Формат: YYYYMMDD rev.<short-sha> — подставляется в __VERSION__ плейсхолдер.
+        # Паттерн заимствован из r3code/report-logs-collection-in-ai-era.
+        run: |
+          VERSION="$(date -u +%Y%m%d) rev. $(echo ${{ github.sha }} | cut -c1-7)"
+          echo "Version: $VERSION"
+          sed -i "s/__VERSION__/$VERSION/g" deck/slides.md deck/pages/*.md
+          grep -rq "$VERSION" deck/pages/ && echo "Version injected OK"
 
       - name: Lint migration invariants
         # Запрещаем: CDN шрифтов/иконок, mdc:true, font-size<18px,

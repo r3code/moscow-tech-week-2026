@@ -12,7 +12,7 @@ lineNumbers: false
   <div class="s37-deco-circle" style="width:260px;height:260px;background:rgba(255,167,38,0.05);top:-80px;right:-80px;"></div>
   <div class="s37-deco-circle" style="width:180px;height:180px;background:rgba(239,83,80,0.05);bottom:-50px;left:-50px;"></div>
   <div aria-hidden="true" style="position:absolute;top:30px;right:70px;font-family:'Montserrat',sans-serif;font-weight:900;font-size:80px;color:#FFF8E1;opacity:0.6;z-index:1;line-height:1;pointer-events:none;">CASE 4</div>
-  <PageBadge base="39" />
+  <PageBadge base="41" />
   <header style="padding:40px 70px 16px 70px;display:flex;align-items:center;gap:22px;position:relative;z-index:10;">
     <div style="width:6px;height:70px;background:#FFA726;border-radius:3px;flex-shrink:0;"></div>
     <div>
@@ -25,8 +25,10 @@ lineNumbers: false
       <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:#BF360C;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px;">00:24 — Найдена причина</div>
       <div class="s37-code-block"><span class="com"># timestamp в логе:</span>
 <span class="str">"2024-08-02T00:00:00Z"</span>
+&nbsp;
 <span class="com"># VRL парсил как:</span>
 <span class="hl">"24-08-02" → 24 год н. э.</span>
+&nbsp;
 <span class="com"># правление императора Тиберия</span>
 &nbsp;
 <span class="fn">to_unix_timestamp()</span> → <span class="kw">panic</span></div>

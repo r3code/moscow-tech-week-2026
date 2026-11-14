@@ -11,7 +11,7 @@ lineNumbers: false
   <div class="s34-grid-pattern"></div>
   <div class="s34-deco-circle" style="width:280px;height:280px;background:rgba(239,83,80,0.05);top:-90px;right:-90px;"></div>
   <div class="s34-deco-circle" style="width:180px;height:180px;background:rgba(255,167,38,0.06);bottom:-60px;left:-50px;"></div>
-  <PageBadge base="34" />
+  <PageBadge base="36" />
   <header style="padding:40px 70px 16px 70px;display:flex;align-items:center;gap:22px;position:relative;z-index:10;">
     <div style="width:6px;height:70px;background:#EF5350;border-radius:3px;flex-shrink:0;"></div>
     <div>
@@ -24,10 +24,10 @@ lineNumbers: false
       <img src="/images/panica.png" alt="Паника">
     </div>
     <div style="flex:1;display:flex;flex-direction:column;gap:18px;">
-      <div class="s34-lag-card">
+      <div v-click="1" class="s34-lag-card">
         <div class="s34-lag-head">
           <FAIcon name="exclamation-triangle" :size="28" color="#C62828" />
-          <div v-click="1" class="s34-lag-head-title">Лаг Kafka растёт</div>
+          <div class="s34-lag-head-title">Лаг Kafka растёт</div>
         </div>
         <div class="s34-lag-big">1/2 млрд записей</div>
         <div class="s34-lag-sub">ещё столько — и место кончится</div>

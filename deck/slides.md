@@ -53,6 +53,10 @@ src: ./pages/11-case2-lsof.md
 ---
 
 ---
+src: ./pages/11b-case2-df-hint.md
+---
+
+---
 src: ./pages/12-case2-diagnosis.md
 ---
 

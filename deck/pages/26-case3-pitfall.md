@@ -11,7 +11,7 @@ lineNumbers: false
   <div class="grid-pattern" aria-hidden="true"></div>
   <div class="decorative-circle" style="width:380px;height:380px;background:radial-gradient(circle,rgba(77,182,172,0.12) 0%,transparent 70%);top:-130px;left:-110px;"></div>
   <div class="decorative-circle" style="width:260px;height:260px;background:radial-gradient(circle,rgba(239,83,80,0.08) 0%,transparent 70%);bottom:-90px;right:-60px;"></div>
-  <PageBadge base="26" />
+  <PageBadge base="28" />
   <div aria-hidden="true" style="position:absolute;top:30px;right:230px;z-index:1;opacity:0.6;font-family:'Montserrat',sans-serif;font-weight:900;font-size:80px;color:#E0F2F1;letter-spacing:4px;line-height:1;">CASE 3</div>
   <header style="position:relative;z-index:10;padding:40px 70px 16px 70px;display:flex;align-items:center;justify-content:space-between;">
     <div style="display:flex;align-items:center;gap:22px;">
@@ -37,8 +37,8 @@ lineNumbers: false
         <p style="font-family:'Inter',sans-serif;font-size:21px;color:#424242;line-height:1.5;margin:10px 0 0 0;">По умолчанию <span style="font-family:'JetBrains Mono',monospace;background:#F5F5F5;padding:2px 6px;border-radius:4px;font-size:18px;">ttl_only_drop_parts = 1</span> — партиция живёт по самому долгому TTL.</p>
         <p style="font-family:'Inter',sans-serif;font-size:18px;color:#616161;line-height:1.4;margin:8px 0 0 0;">Партиция с TTL=2 дня будет ждать 180 дней из-за одной записи рядом.</p>
       </div>
-      <div style="flex:1;background:#E0F2F1;border-radius:14px;padding:22px 26px;border-left:6px solid #4DB6AC;">
-        <div v-click="1" style="display:flex;align-items:center;gap:12px;">
+      <div v-click="1" style="flex:1;background:#E0F2F1;border-radius:14px;padding:22px 26px;border-left:6px solid #4DB6AC;">
+        <div style="display:flex;align-items:center;gap:12px;">
           <FAIcon name="check" :size="26" color="#00796B" />
           <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:21px;color:#00796B;margin:0;">Решение</h3>
         </div>

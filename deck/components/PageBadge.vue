@@ -6,7 +6,7 @@ import { useSlideContext } from '@slidev/client'
 // base = page number of the slide's FIRST click state (1..51).
 const props = defineProps({
   base: { type: [Number, String], required: true },
-  total: { type: [Number, String], default: 51 },
+  total: { type: [Number, String], default: 57 },
 })
 
 const { $clicks } = useSlideContext()

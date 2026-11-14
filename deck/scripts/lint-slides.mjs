@@ -16,9 +16,17 @@ const banned = [
   { re: /cdn\.tailwindcss\.com/, why: 'Tailwind CDN' },
   { re: /cdnjs\.cloudflare\.com|font-awesome/, why: 'FontAwesome CDN (use FAIcon)' },
   { re: /^mdc:\s*true$/m, why: 'mdc: true breaks raw HTML blocks' },
+  { re: /VersionStamp/, why: 'VersionStamp component removed — use __VERSION__ placeholder + CI sed injection' },
+  { re: /version\.json/, why: 'version.json removed — use __VERSION__ placeholder + CI sed injection' },
 ]
 
+// Cover slide MUST contain the __VERSION__ placeholder (CI sed-injects the stamp).
 let failed = false
+const coverSrc = readFileSync(join(pagesDir, '01-cover.md'), 'utf8')
+if (!coverSrc.includes('__VERSION__')) {
+  console.error('[lint] 01-cover.md: missing __VERSION__ placeholder (CI cannot inject version stamp)')
+  failed = true
+}
 
 for (const f of readdirSync(pagesDir).filter((f) => f.endsWith('.md')).sort()) {
   const p = join(pagesDir, f)

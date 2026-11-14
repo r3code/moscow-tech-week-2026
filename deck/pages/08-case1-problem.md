@@ -10,7 +10,7 @@ lineNumbers: false
 <div class="mtw-slide" style="background:#FFFFFF;flex-direction:column;position:relative;">
   <div class="grid-pattern" aria-hidden="true"></div>
   <div aria-hidden="true" style="position:absolute;top:80px;right:70px;font-family:'Montserrat',sans-serif;font-weight:900;font-size:80px;color:#FFEBEE;letter-spacing:4px;z-index:1;opacity:0.6;pointer-events:none;line-height:1;">CASE 1</div>
-  <PageBadge base="13" />
+  <PageBadge base="14" />
   <div style="padding:40px 70px 16px 70px;display:flex;align-items:center;justify-content:space-between;position:relative;">
     <div style="display:flex;align-items:center;gap:22px;position:relative;z-index:10;">
       <div style="width:6px;height:70px;background:#EF5350;border-radius:3px;"></div>

@@ -32,11 +32,11 @@ lineNumbers: false
       </div>
     </div>
     <div style="flex:1;display:flex;flex-direction:column;gap:14px;justify-content:center;">
-      <div style="background:#F8F9FA;border-left:5px solid #EF5350;padding:18px 22px;border-radius:10px;display:flex;align-items:center;gap:16px;">
+      <div v-click="1" style="background:#F8F9FA;border-left:5px solid #EF5350;padding:18px 22px;border-radius:10px;display:flex;align-items:center;gap:16px;">
         <FAIcon name="server" :size="24" color="#C62828" />
-        <div v-click="1" style="font-family:'Inter',sans-serif;font-size:21px;color:#424242;line-height:1.35;">18 нод Elastic + 2 SRE + DevOps на тушении пожаров<br><span style="font-size:18px;color:#757575;margin-top:6px;display:inline-block;">TCO 810к руб./мес · Retention 5 часов</span></div>
+        <div style="font-family:'Inter',sans-serif;font-size:21px;color:#424242;line-height:1.35;">18 нод Elastic + 2 SRE + DevOps на тушении пожаров<br><span style="font-size:18px;color:#757575;margin-top:6px;display:inline-block;">TCO 810к руб./мес · Retention 5 часов</span></div>
       </div>
-      <div style="background:#F8F9FA;border-left:5px solid #EF5350;padding:18px 22px;border-radius:10px;display:flex;align-items:center;gap:16px;">
+      <div v-click="2" style="background:#F8F9FA;border-left:5px solid #EF5350;padding:18px 22px;border-radius:10px;display:flex;align-items:center;gap:16px;">
         <FAIcon name="fire" :size="24" color="#C62828" />
         <div style="font-family:'Inter',sans-serif;font-size:21px;color:#424242;line-height:1.35;">FluentD терял логи при пиковых нагрузках</div>
       </div>

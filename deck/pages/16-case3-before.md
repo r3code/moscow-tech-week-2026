@@ -11,7 +11,7 @@ lineNumbers: false
   <div class="grid-pattern" aria-hidden="true"></div>
   <div class="decorative-circle" style="width:380px;height:380px;background:radial-gradient(circle,rgba(255,167,38,0.10) 0%,transparent 70%);top:-130px;left:-110px;"></div>
   <div class="decorative-circle" style="width:260px;height:260px;background:radial-gradient(circle,rgba(255,167,38,0.08) 0%,transparent 70%);bottom:-90px;right:-60px;"></div>
-  <PageBadge base="23" />
+  <PageBadge base="25" />
   <div aria-hidden="true" style="position:absolute;top:30px;right:230px;z-index:1;opacity:0.6;font-family:'Montserrat',sans-serif;font-weight:900;font-size:80px;color:#FFF8E1;letter-spacing:4px;line-height:1;">CASE 3</div>
   <header style="position:relative;z-index:10;padding:40px 70px 16px 70px;display:flex;align-items:center;justify-content:space-between;">
     <div style="display:flex;align-items:center;gap:22px;">
@@ -39,8 +39,8 @@ lineNumbers: false
         <p style="font-family:'Inter',sans-serif;font-size:21px;color:#424242;line-height:1.5;margin:14px 0 0 0;">TTL на таблицу (встроен в ClickHouse) — все сервисы хранили 7 дней.</p>
         <p style="font-family:'Inter',sans-serif;font-size:18px;color:#9E9E9E;line-height:1.4;margin:10px 0 0 0;">Не подходит: мало для аудита, много для dev</p>
       </div>
-      <div style="flex:1;background:#FFF5F5;border-radius:14px;padding:28px 30px;border-left:6px solid #EF5350;">
-        <div v-click="1" style="display:flex;align-items:center;gap:12px;">
+      <div v-click="1" style="flex:1;background:#FFF5F5;border-radius:14px;padding:28px 30px;border-left:6px solid #EF5350;">
+        <div style="display:flex;align-items:center;gap:12px;">
           <FAIcon name="times-circle" :size="30" color="#C62828" />
           <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:24px;color:#C62828;margin:0;">Рассмотрели VictoriaLogs</h3>
         </div>

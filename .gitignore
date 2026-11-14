@@ -11,7 +11,6 @@ Thumbs.db
 deck/node_modules/
 deck/dist/
 deck/.slidev-cache/
-deck/public/version.json
 deck/preview/full/
 deck/preview/pilot/
 *.log
