@@ -40,11 +40,11 @@ lineNumbers: false
         <div class="s28-stage-sub">пишет в поле LogTTL</div>
       </div>
     </div>
-    <div v-click="1" class="s28-code-card"><span class="ttl-title">Поле в логе приложения (JSON)</span><span class="kw">{</span>
+    <pre v-click="1" class="s28-code-card"><span class="ttl-title">Поле в логе приложения (JSON)</span><span class="kw">{</span>
   <span class="str">"msg"</span>: <span class="str">"Store me for 14 days!"</span>,
   <span class="hl">"logging.vitech.team/ttl"</span>: <span class="str">"14d"</span>
 <span class="kw">}</span>
-<span class="com"># 2d · 4d · 7d · 14d · 30d · 180d</span></div>
+<span class="com"># 2d · 4d · 7d · 14d · 30d · 180d</span></pre>
     <div v-click="2" class="s28-info-row">
       <div class="s28-info-card c1">
         <FAIcon name="user-cog" :size="24" color="#1565C0" />

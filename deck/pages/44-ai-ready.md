@@ -22,7 +22,7 @@ lineNumbers: false
       <div style="width:6px;height:70px;background:#7E57C2;border-radius:3px;"></div>
       <div>
         <h1 style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:36px;color:#212121;line-height:1.15;margin:0;">AI-Ready Observability</h1>
-        <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:24px;color:#757575;margin-top:6px;">ClickStack MCP</div>
+        <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:24px;color:#757575;margin-top:6px;">Уменьшение MTTD</div>
       </div>
     </div>
     <div class="s44-note-card">

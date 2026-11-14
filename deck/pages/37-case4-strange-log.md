@@ -23,11 +23,11 @@ lineNumbers: false
   <main style="flex:1;padding:20px 70px 40px 70px;display:flex;flex-direction:column;justify-content:center;gap:20px;position:relative;z-index:10;">
     <div>
       <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:#BF360C;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px;">Лог с валидным JSON и датой</div>
-      <div class="s37-code-block"><span class="kw">{</span>
+      <pre class="s37-code-block"><span class="kw">{</span>
   <span class="str">"timestamp"</span>: <span class="hl">"24-08-02 23:59:43.145224192Z"</span>,
   <span class="str">"level"</span>: <span class="str">"INFO"</span>,
   <span class="str">"msg"</span>: <span class="str">"request completed"</span>
-<span class="kw">}</span></div>
+<span class="kw">}</span></pre>
     </div>
   </main>
 </div>

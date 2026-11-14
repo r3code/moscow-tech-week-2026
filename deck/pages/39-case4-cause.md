@@ -23,7 +23,7 @@ lineNumbers: false
   <main style="flex:1;padding:20px 70px 40px 70px;display:flex;flex-direction:column;justify-content:center;gap:20px;position:relative;z-index:10;">
     <div>
       <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:#BF360C;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px;">00:24 — Найдена причина</div>
-      <div class="s37-code-block"><span class="com"># timestamp в логе:</span>
+      <pre class="s37-code-block"><span class="com"># timestamp в логе:</span>
 <span class="str">"2024-08-02T00:00:00Z"</span>
 &nbsp;
 <span class="com"># VRL парсил как:</span>
@@ -31,7 +31,7 @@ lineNumbers: false
 &nbsp;
 <span class="com"># правление императора Тиберия</span>
 &nbsp;
-<span class="fn">to_unix_timestamp()</span> → <span class="kw">panic</span></div>
+<span class="fn">to_unix_timestamp()</span> → <span class="kw">panic</span></pre>
     </div>
     <div class="s39-banner">
       <FAIcon name="exclamation-triangle" :size="28" color="#BF360C" />

@@ -336,7 +336,7 @@
   background: #F5F7FA; color: #1A2A3A; border-radius: 14px; padding: 24px 30px;
   border-left: 5px solid #FFA726; font-family: var(--font-mono); font-size: 18px;
   line-height: 1.7; box-shadow: 0 4px 14px rgba(15,41,66,0.08);
-  white-space: pre; overflow: hidden;
+  white-space: pre; overflow: hidden; margin: 0;
 }
 .s37-code-block .kw { color: #1565C0; font-weight: 600; }
 .s37-code-block .str { color: #558B2F; }
