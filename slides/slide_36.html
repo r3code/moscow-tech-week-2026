@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Slide 23 — CASE 4 · Лаг Kafka растёт</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="global.css">
+<style>
+  body { display:flex; align-items:center; justify-content:center; min-height:100vh; }
+  .slide-container { display:flex; flex-direction:column; }
+  .top-header { padding:40px 70px 16px 70px; display:flex; align-items:center; justify-content:space-between; position:relative; z-index:10; }
+  .header-left { display:flex; align-items:center; gap:22px; }
+  .accent-bar-h { width:6px; height:70px; background:#EF5350; border-radius:3px; flex-shrink:0; }
+  .title-en-h { font-family:'PT Serif',serif; font-style:italic; font-weight:700; font-size:20px; color:#C62828; letter-spacing:2px; text-transform:uppercase; margin-bottom:6px; line-height:1; }
+  .title-cn-h { font-family:'Montserrat',sans-serif; font-weight:900; font-size:38px; color:#212121; line-height:1.1; margin:0; }
+  .case-decor { position:absolute; top:30px; right:70px; font-family:'Montserrat',sans-serif; font-weight:900; font-size:80px; color:#FFEBEE; opacity:0.6; z-index:1; line-height:1; pointer-events:none; }
+  .content { flex:1; padding:30px 70px 50px 70px; display:flex; flex-direction:column; justify-content:center; gap:28px; position:relative; z-index:10; }
+  .row { display:flex; gap:24px; }
+  .stat-card { flex:1; border-radius:16px; padding:32px 36px; display:flex; flex-direction:column; gap:12px; box-shadow:0 6px 18px rgba(0,0,0,0.06); }
+  .stat-card.left { background:#FFF5F5; border-left:8px solid #EF5350; }
+  .stat-card.right { background:#FFF8E1; border-left:8px solid #FFA726; }
+  .stat-head { display:flex; align-items:center; gap:14px; }
+  .stat-head-icon { font-size:32px; line-height:1; }
+  .stat-head-title { font-family:'Montserrat',sans-serif; font-weight:700; font-size:24px; color:#424242; }
+  .stat-big { font-family:'Montserrat',sans-serif; font-weight:900; font-size:64px; line-height:1.05; letter-spacing:-2px; }
+  .stat-big.red { color:#C62828; }
+  .stat-big.amber { color:#BF360C; }
+  .stat-sub { font-family:'Inter',sans-serif; font-size:21px; color:#424242; line-height:1.5; }
+  .banner { background:#0F2942; border-radius:12px; padding:22px 28px; border-left:5px solid #EF5350; display:flex; align-items:center; gap:16px; box-shadow:0 8px 20px rgba(15,41,66,0.2); }
+  .banner-icon { font-size:26px; color:#C62828; flex-shrink:0; }
+  .banner-text { font-family:'Inter',sans-serif; font-weight:700; font-size:21px; color:#E3F2FD; line-height:1.5; }
+  .grid-pattern { position:absolute; inset:0; background-image: linear-gradient(rgba(239,83,80,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(239,83,80,0.04) 1px, transparent 1px); background-size:40px 40px; z-index:0; pointer-events:none; }
+  .deco-circle { position:absolute; border-radius:50%; pointer-events:none; z-index:0; }
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <div class="grid-pattern"></div>
+  <div class="deco-circle" data-decor aria-hidden="true" style="width:280px;height:280px;background:rgba(239,83,80,0.05);top:-90px;left:-90px;"></div>
+  <div class="deco-circle" data-decor aria-hidden="true" style="width:200px;height:200px;background:rgba(255,167,38,0.05);bottom:-60px;right:-60px;"></div>
+
+  <div class="case-decor" data-decor aria-hidden="true">CASE 4</div>
+
+  <div class="page-badge">
+    <span class="badge-num">36 / 51</span>
+    <span class="badge-bar"></span>
+  </div>
+
+  <header class="top-header">
+    <div class="header-left">
+      <div class="accent-bar-h"></div>
+      <div>
+        <div class="title-en-h">CASE 4 · ЛАГ KAFKA</div>
+        <h1 class="title-cn-h">Лаг Kafka растёт</h1>
+      </div>
+    </div>
+  </header>
+
+  <main class="content">
+    <div class="row">
+      <div class="stat-card left">
+        <div class="stat-head">
+          <i class="fas fa-database stat-head-icon" style="color:#C62828;"></i>
+          <div class="stat-head-title">Буфер Kafka</div>
+        </div>
+        <div class="stat-big red">500M+</div>
+        <div class="stat-sub">записей логов в лаге</div>
+      </div>
+      <div class="stat-card right">
+        <div class="stat-head">
+          <i class="fas fa-hdd stat-head-icon" style="color:#BF360C;"></i>
+          <div class="stat-head-title">Диск</div>
+        </div>
+        <div class="stat-big amber">~500M</div>
+        <div class="stat-sub">ещё столько — и место кончится</div>
+      </div>
+    </div>
+
+    <div class="banner">
+      <i class="fas fa-clock banner-icon"></i>
+      <div class="banner-text">Время до переполнения диска — полчаса</div>
+    </div>
+  </main>
+
+  <aside data-notes>Лаг Kafka растёт. Уже больше полмиллиарда записей в буфере. Диск заполнен наполовину — ещё столько же записей, и место кончится. Время до переполнения — полчаса. Нужно срочно найти причину, иначе потеряем весь конвейер логов.</aside>
+</div>
+</body>
+</html>

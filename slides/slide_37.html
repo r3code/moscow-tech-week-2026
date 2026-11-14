@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Slide 24 — CASE 4 · Странный лог в потоке</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="global.css">
+<style>
+  body { display:flex; align-items:center; justify-content:center; min-height:100vh; }
+  .slide-container { display:flex; flex-direction:column; }
+  .top-header { padding:40px 70px 16px 70px; display:flex; align-items:center; justify-content:space-between; position:relative; z-index:10; }
+  .header-left { display:flex; align-items:center; gap:22px; }
+  .accent-bar-h { width:6px; height:70px; background:#FFA726; border-radius:3px; flex-shrink:0; }
+  .title-en-h { font-family:'PT Serif',serif; font-style:italic; font-weight:700; font-size:20px; color:#BF360C; letter-spacing:2px; text-transform:uppercase; margin-bottom:6px; line-height:1; }
+  .title-cn-h { font-family:'Montserrat',sans-serif; font-weight:900; font-size:38px; color:#212121; line-height:1.1; margin:0; }
+  .case-decor { position:absolute; top:30px; right:70px; font-family:'Montserrat',sans-serif; font-weight:900; font-size:80px; color:#FFF8E1; opacity:0.6; z-index:1; line-height:1; pointer-events:none; }
+  .content { flex:1; padding:20px 70px 40px 70px; display:flex; flex-direction:column; justify-content:center; gap:20px; position:relative; z-index:10; }
+  .code-title { font-family:'Montserrat',sans-serif; font-weight:700; font-size:18px; color:#BF360C; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px; }
+  .code-block { background:#0F2942; color:#E3F2FD; border-radius:14px; padding:24px 30px; border-left:5px solid #FFA726; font-family:'JetBrains Mono',monospace; font-size:18px; line-height:1.7; box-shadow:0 10px 30px rgba(15,41,66,0.3); white-space:pre; overflow:hidden; }
+  .code-block .kw { color:#82B1FF; font-weight:600; }
+  .code-block .str { color:#C5E1A5; }
+  .code-block .hl { background:rgba(255,167,38,0.18); padding:1px 4px; border-radius:3px; color:#BF360C; }
+  .verify-card { background:#FFFDE7; border-radius:14px; padding:22px 28px; border-left:6px solid #FFA726; display:flex; flex-direction:column; gap:10px; box-shadow:0 4px 14px rgba(255,167,38,0.10); }
+  .verify-head { display:flex; align-items:center; gap:14px; }
+  .verify-head-icon { font-size:28px; color:#BF360C; line-height:1; }
+  .verify-head-title { font-family:'Montserrat',sans-serif; font-weight:700; font-size:24px; color:#424242; }
+  .verify-text { font-family:'Inter',sans-serif; font-size:21px; color:#424242; line-height:1.5; }
+  .verify-text .mono-chip { font-family:'JetBrains Mono',monospace; background:#F5F5F5; padding:2px 6px; border-radius:4px; font-size:18px; color:#212121; }
+  .verify-sub { font-family:'Inter',sans-serif; font-size:18px; color:#616161; margin-top:4px; line-height:1.4; }
+  .grid-pattern { position:absolute; inset:0; background-image: linear-gradient(rgba(255,167,38,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,167,38,0.04) 1px, transparent 1px); background-size:40px 40px; z-index:0; pointer-events:none; }
+  .deco-circle { position:absolute; border-radius:50%; pointer-events:none; z-index:0; }
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <div class="grid-pattern"></div>
+  <div class="deco-circle" data-decor aria-hidden="true" style="width:260px;height:260px;background:rgba(255,167,38,0.05);top:-80px;left:-80px;"></div>
+  <div class="deco-circle" data-decor aria-hidden="true" style="width:200px;height:200px;background:rgba(239,83,80,0.05);bottom:-60px;right:-60px;"></div>
+
+  <div class="case-decor" data-decor aria-hidden="true">CASE 4</div>
+
+  <div class="page-badge">
+    <span class="badge-num">37 / 51</span>
+    <span class="badge-bar"></span>
+  </div>
+
+  <header class="top-header">
+    <div class="header-left">
+      <div class="accent-bar-h"></div>
+      <div>
+        <div class="title-en-h">CASE 4 · РАССЛЕДОВАНИЕ</div>
+        <h1 class="title-cn-h">Странный лог в потоке</h1>
+      </div>
+    </div>
+  </header>
+
+  <main class="content">
+    <div>
+      <div class="code-title">Лог с валидным JSON и датой</div>
+      <div class="code-block"><span class="kw">{</span>
+  <span class="str">"timestamp"</span>: <span class="hl">"24-08-02 23:59:43.145224192Z"</span>,
+  <span class="str">"level"</span>: <span class="str">"INFO"</span>,
+  <span class="str">"msg"</span>: <span class="str">"request completed"</span>
+<span class="kw">}</span></div>
+    </div>
+  </main>
+
+  <aside data-notes>Нашли лог с валидным JSON и датой: 24-08-02 23:59:43.145224192Z. Проверили — при интерпретации как 24 год нашей эры, время правления императора Тиберия, функция to_unix_timestamp в коде VRL падает в panic. Дата хранится с точностью до наносекунд — при преобразовании в int64 произошло переполнение. Один кривой timestamp — и весь конвейер логов останавливается. На следующем слайде — кто этот император.</aside>
+</div>
+</body>
+</html>
