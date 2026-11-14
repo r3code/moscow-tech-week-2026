@@ -38,13 +38,13 @@ lineNumbers: false
         <div style="font-family:'Inter',sans-serif;font-size:18px;color:#5C6BC0;margin-top:6px;">имена вида my-very-long-pretty-lovely-continer-name</div>
       </div>
     </div>
-    <div style="background:#0F2942;color:#E3F2FD;border-radius:12px;padding:22px 26px;border-left:5px solid #EF5350;font-family:'JetBrains Mono',monospace;font-size:18px;line-height:1.6;">
+    <div style="background:#F5F7FA;color:#1A2A3A;border-radius:12px;padding:22px 26px;border-left:5px solid #EF5350;font-family:'JetBrains Mono',monospace;font-size:18px;line-height:1.6;">
       <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:#C62828;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">❌ 2 аннотации на контейнер — превышение лимита</div>
-      <div><span style="color:#82B1FF;font-weight:600;">metadata</span>:</div>
-      <div>&nbsp;&nbsp;<span style="color:#82B1FF;font-weight:600;">annotations</span>:</div>
-      <div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="background:rgba(255,167,38,0.18);padding:1px 4px;border-radius:3px;color:#BF360C;">containers.vitech.team/my-very-long-pretty-lovely-continer-name.service_name</span>: <span style="color:#C5E1A5;">"billing-api"</span></div>
-      <div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="background:rgba(255,167,38,0.18);padding:1px 4px;border-radius:3px;color:#BF360C;">containers.vitech.team/my-very-long-pretty-lovely-continer-name.unified_log_model</span>: <span style="color:#C5E1A5;">"true"</span></div>
-      <div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#90A4AE;font-style:italic;"># 90+ символов — K8s отказывается применять манифест</span></div>
+      <div><span style="color:#1565C0;font-weight:600;">metadata</span>:</div>
+      <div>&nbsp;&nbsp;<span style="color:#1565C0;font-weight:600;">annotations</span>:</div>
+      <div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="background:rgba(255,167,38,0.18);padding:1px 4px;border-radius:3px;color:#BF360C;">containers.vitech.team/my-very-long-pretty-lovely-continer-name.service_name</span>: <span style="color:#558B2F;">"billing-api"</span></div>
+      <div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="background:rgba(255,167,38,0.18);padding:1px 4px;border-radius:3px;color:#BF360C;">containers.vitech.team/my-very-long-pretty-lovely-continer-name.unified_log_model</span>: <span style="color:#558B2F;">"true"</span></div>
+      <div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#6B7B8D;font-style:italic;"># 90+ символов — K8s отказывается применять манифест</span></div>
     </div>
   </div>
 </div>

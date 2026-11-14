@@ -23,14 +23,14 @@ lineNumbers: false
     </div>
   </header>
   <main style="flex:1;padding:20px 70px 40px 70px;position:relative;z-index:10;display:flex;flex-direction:column;justify-content:center;gap:20px;">
-    <div style="background:#0F2942;border-radius:14px;padding:28px 32px;border-left:5px solid #5C6BC0;box-shadow:0 10px 30px rgba(15,41,66,0.30);">
+    <div style="background:#F5F7FA;border-radius:14px;padding:28px 32px;border-left:5px solid #5C6BC0;box-shadow:0 10px 30px rgba(15,41,66,0.10);">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
         <span style="width:12px;height:12px;border-radius:50%;background:#FF5F56;display:inline-block;"></span>
         <span style="width:12px;height:12px;border-radius:50%;background:#FFBD2E;display:inline-block;"></span>
         <span style="width:12px;height:12px;border-radius:50%;background:#27C93F;display:inline-block;"></span>
-        <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;color:#90A4AE;margin-left:8px;">df -h /var/log</span>
+        <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;color:#6B7B8D;margin-left:8px;">df -h /var/log</span>
       </div>
-      <pre style="font-family:'JetBrains Mono',monospace;font-size:18px;color:#E3F2FD;line-height:1.8;margin:0;white-space:pre-wrap;overflow:hidden;"><span style="color:#90A4AE">$</span> df -h /var/log
+      <pre style="font-family:'JetBrains Mono',monospace;font-size:18px;color:#1A2A3A;line-height:1.8;margin:0;white-space:pre-wrap;overflow:hidden;"><span style="color:#6B7B8D">$</span> df -h /var/log
 <span style="color:#C62828">/dev/sda1  100G  100G  0  100%</span>  /var/log</pre>
     </div>
   </main>

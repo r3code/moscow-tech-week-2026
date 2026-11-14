@@ -17,7 +17,7 @@ lineNumbers: false
     <div style="width:6px;height:70px;background:#EF5350;border-radius:3px;flex-shrink:0;"></div>
     <div>
       <div style="font-family:'PT Serif',serif;font-style:italic;font-weight:700;font-size:20px;color:#C62828;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;line-height:1;">ПРОБЛЕМА</div>
-      <h1 style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:38px;color:#212121;line-height:1.1;margin:0;">Пятничный panic</h1>
+      <h1 style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:38px;color:#212121;line-height:1.1;margin:0;">Пятничный сюрприз</h1>
     </div>
   </header>
   <main style="flex:1;padding:20px 70px 40px 70px;display:flex;gap:28px;position:relative;z-index:10;">

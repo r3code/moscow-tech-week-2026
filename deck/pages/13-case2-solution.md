@@ -25,11 +25,11 @@ lineNumbers: false
   <main style="flex:1;padding:30px 70px 50px 70px;position:relative;z-index:10;display:flex;flex-direction:column;justify-content:center;">
     <div style="max-width:800px;margin:0 auto;width:100%;">
       <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:#00796B;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">Vector config</div>
-      <pre style="background:#0F2942;color:#E3F2FD;border-radius:14px;padding:32px 36px;border-left:5px solid #4DB6AC;font-family:'JetBrains Mono',monospace;font-size:18px;line-height:1.8;box-shadow:0 10px 30px rgba(15,41,66,0.30);margin:0;white-space:pre;overflow:hidden;"><span style="color:#82B1FF;font-weight:600">[sources.app_log]</span>
-type = <span style="color:#C5E1A5">"file"</span>
-include = <span style="color:#C5E1A5">"/var/log/containers/*.log"</span>
+      <pre style="background:#F5F7FA;color:#1A2A3A;border-radius:14px;padding:32px 36px;border-left:5px solid #4DB6AC;font-family:'JetBrains Mono',monospace;font-size:18px;line-height:1.8;box-shadow:0 10px 30px rgba(15,41,66,0.10);margin:0;white-space:pre;overflow:hidden;"><span style="color:#1565C0;font-weight:600">[sources.app_log]</span>
+type = <span style="color:#558B2F">"file"</span>
+include = <span style="color:#558B2F">"/var/log/containers/*.log"</span>
 &nbsp;
-<span style="color:#90A4AE;font-style:italic"># Читать свежие логи блоками по 16 КБ</span>
+<span style="color:#6B7B8D;font-style:italic"># Читать свежие логи блоками по 16 КБ</span>
 <span style="background:rgba(255,167,38,0.18);padding:1px 4px;border-radius:3px;color:#BF360C">oldest_first = false</span>
 <span style="background:rgba(255,167,38,0.18);padding:1px 4px;border-radius:3px;color:#BF360C">max_read_bytes = 16384</span></pre>
     </div>

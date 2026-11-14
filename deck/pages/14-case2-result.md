@@ -25,7 +25,7 @@ lineNumbers: false
   <main style="flex:1;padding:20px 70px 40px 70px;position:relative;z-index:10;display:flex;flex-direction:column;gap:20px;">
     <div>
       <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;color:#00796B;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px;">Vector config</div>
-      <pre style="background:#0F2942;color:#E3F2FD;border-radius:10px;padding:18px 22px;border-left:4px solid #4DB6AC;font-family:'JetBrains Mono',monospace;font-size:18px;line-height:1.6;max-height:200px;overflow:hidden;margin:0;white-space:pre;"><span style="color:#90A4AE;font-style:italic"># Читать свежие логи блоками по 16 КБ</span>
+      <pre style="background:#F5F7FA;color:#1A2A3A;border-radius:10px;padding:18px 22px;border-left:4px solid #4DB6AC;font-family:'JetBrains Mono',monospace;font-size:18px;line-height:1.6;max-height:200px;overflow:hidden;margin:0;white-space:pre;"><span style="color:#6B7B8D;font-style:italic"># Читать свежие логи блоками по 16 КБ</span>
 <span style="background:rgba(255,167,38,0.18);padding:1px 4px;border-radius:3px;color:#BF360C">oldest_first = false</span>
 <span style="background:rgba(255,167,38,0.18);padding:1px 4px;border-radius:3px;color:#BF360C">max_read_bytes = 16384</span></pre>
     </div>

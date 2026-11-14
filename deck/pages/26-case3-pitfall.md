@@ -25,8 +25,8 @@ lineNumbers: false
   <main style="flex:1;padding:20px 70px 40px 70px;position:relative;z-index:10;display:flex;flex-direction:column;gap:18px;">
     <div>
       <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;color:#00796B;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;">SQL</div>
-      <pre style="background:#0F2942;color:#E3F2FD;border-radius:10px;padding:16px 20px;border-left:4px solid #4DB6AC;font-family:'JetBrains Mono',monospace;font-size:18px;line-height:1.6;max-height:180px;overflow:hidden;margin:0;white-space:pre;"><span style="color:#82B1FF;font-weight:600">TTL</span> <span style="color:#80DEEA">toDateTime</span>(ObservedTimestamp) + <span style="color:#80DEEA">toIntervalDay</span>(LogTTL)
-<span style="color:#82B1FF;font-weight:600">SETTINGS</span> <span style="background:rgba(255,167,38,0.18);padding:1px 4px;border-radius:3px;color:#BF360C">ttl_only_drop_parts = 0</span></pre>
+      <pre style="background:#F5F7FA;color:#1A2A3A;border-radius:10px;padding:16px 20px;border-left:4px solid #4DB6AC;font-family:'JetBrains Mono',monospace;font-size:18px;line-height:1.6;max-height:180px;overflow:hidden;margin:0;white-space:pre;"><span style="color:#1565C0;font-weight:600">TTL</span> <span style="color:#00796B">toDateTime</span>(ObservedTimestamp) + <span style="color:#00796B">toIntervalDay</span>(LogTTL)
+<span style="color:#1565C0;font-weight:600">SETTINGS</span> <span style="background:rgba(255,167,38,0.18);padding:1px 4px;border-radius:3px;color:#BF360C">ttl_only_drop_parts = 0</span></pre>
     </div>
     <div style="display:flex;gap:20px;">
       <div style="flex:1;background:#FFF5F5;border-radius:14px;padding:22px 26px;border-left:6px solid #EF5350;">
