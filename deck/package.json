@@ -1,0 +1,26 @@
+{
+  "name": "mtw2026-deck",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "slidev --open",
+    "build": "slidev build",
+    "gen:version": "node scripts/gen-version.mjs",
+    "lint": "node scripts/lint-slides.mjs",
+    "export:pdf": "slidev export --format pdf --with-clicks --output dist/mtw2026.pdf",
+    "export:pptx": "slidev export --format pptx --with-clicks --output dist/mtw2026.pptx",
+    "export:png": "slidev export --format png --with-clicks --output preview/pilot/slide"
+  },
+  "dependencies": {
+    "@slidev/cli": "^53.1.0",
+    "@slidev/theme-default": "^0.25.0",
+    "@fontsource/montserrat": "^5.2.5",
+    "@fontsource/inter": "^5.2.5",
+    "@fontsource/pt-serif": "^5.2.5",
+    "@fontsource/jetbrains-mono": "^5.2.5",
+    "@iconify-json/fa6-solid": "^1.2.2"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.49.0"
+  }
+}
