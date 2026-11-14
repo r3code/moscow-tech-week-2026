@@ -22,7 +22,7 @@ lineNumbers: false
   </div>
   <div style="flex:1;padding:20px 70px 40px 70px;display:flex;flex-direction:column;gap:20px;position:relative;z-index:10;">
     <div style="display:flex;gap:20px;flex:1;">
-      <div v-click="1" style="flex:1;background:#FFFFFF;border-radius:14px;padding:22px 24px;box-shadow:0 6px 16px rgba(0,0,0,0.06);display:flex;flex-direction:column;gap:12px;border-left:5px solid #EF5350;">
+      <div style="flex:1;background:#FFFFFF;border-radius:14px;padding:22px 24px;box-shadow:0 6px 16px rgba(0,0,0,0.06);display:flex;flex-direction:column;gap:12px;border-left:5px solid #EF5350;">
         <div style="display:flex;align-items:center;gap:12px;">
           <FAIcon name="times" :size="26" color="#C62828" />
           <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:21px;color:#C62828;">Было</div>
@@ -32,7 +32,7 @@ lineNumbers: false
           <div style="color:#9E9E9E;"># 90+ char — overflow</div>
         </div>
       </div>
-      <div style="flex:1;background:#FFFFFF;border-radius:14px;padding:22px 24px;box-shadow:0 6px 16px rgba(0,0,0,0.06);display:flex;flex-direction:column;gap:12px;border-left:5px solid #4DB6AC;">
+      <div v-click="1" style="flex:1;background:#FFFFFF;border-radius:14px;padding:22px 24px;box-shadow:0 6px 16px rgba(0,0,0,0.06);display:flex;flex-direction:column;gap:12px;border-left:5px solid #4DB6AC;">
         <div style="display:flex;align-items:center;gap:12px;">
           <FAIcon name="check" :size="26" color="#00796B" />
           <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:21px;color:#00796B;">Стало</div>
