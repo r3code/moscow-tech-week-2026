@@ -24,10 +24,12 @@ import PageBadge from '../components/PageBadge.vue'
 import VersionStamp from '../components/VersionStamp.vue'
 import CaseNumber from '../components/CaseNumber.vue'
 import FAIcon from '../components/FAIcon.vue'
+import StrikeWhen from '../components/StrikeWhen.vue'
 
 export default defineAppSetup(({ app }) => {
   app.component('PageBadge', PageBadge)
   app.component('VersionStamp', VersionStamp)
   app.component('CaseNumber', CaseNumber)
   app.component('FAIcon', FAIcon)
+  app.component('StrikeWhen', StrikeWhen)
 })

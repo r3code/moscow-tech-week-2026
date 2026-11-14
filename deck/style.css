@@ -126,6 +126,381 @@
      carried 1:1 from slides/*.html. Shiki fences stay available for NEW code,
      mtw2026-dark theme configured in setup/shiki.ts. ---- */
 
+/* ---- Shared classes ported verbatim from legacy global.css ---- */
+.accent-bar { width: 8px; background-color: var(--primary); border-radius: 3px; }
+
+.title-en {
+  font-family: var(--font-italic); font-style: italic; font-weight: 700;
+  font-size: 24px; color: var(--accent); letter-spacing: 2px;
+  margin-bottom: 8px; text-transform: uppercase;
+}
+.title-cn {
+  font-family: var(--font-display); font-size: 54px; font-weight: 900;
+  color: var(--ink-900); line-height: 1.1; margin: 0;
+}
+.title-cn .accent { color: var(--primary); }
+
+.surface-card {
+  background: #F8F9FA; border-radius: 14px; padding: 28px 30px;
+  border-left: 6px solid transparent; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.code-block {
+  font-family: var(--font-mono); font-size: 18px; line-height: 1.65;
+  background: #0F2942; color: #E3F2FD; padding: 22px 26px; border-radius: 12px;
+  border-left: 4px solid var(--primary); white-space: pre; overflow: hidden;
+  box-shadow: 0 10px 24px rgba(15,41,66,0.25);
+}
+.code-block .kw { color: #82B1FF; font-weight: 600; }
+.code-block .str { color: #C5E1A5; }
+.code-block .num { color: #FFD54F; }
+.code-block .com { color: #90A4AE; font-style: italic; }
+.code-block .fn { color: #80DEEA; }
+.code-block .hl { background: rgba(255,167,38,0.18); padding: 1px 4px; border-radius: 3px; color: #FFE082; }
+
+.num-tag {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: 50%; background: var(--primary);
+  color: #fff; font-family: var(--font-display); font-weight: 800; font-size: 18px;
+}
+
+.stat-circle {
+  width: 80px; height: 80px; border-radius: 50%; border: 4px solid var(--bg-tint-3);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 900; font-size: 22px; color: var(--accent);
+}
+
+.text-primary { color: var(--primary); }
+.text-accent { color: var(--accent); }
+.text-danger { color: var(--danger); }
+.text-success { color: var(--success); }
+.text-warn { color: var(--warn); }
+.font-mono { font-family: var(--font-mono); }
+.font-italic { font-family: var(--font-italic); font-style: italic; }
+.font-display { font-family: var(--font-display); }
+.mtw-slide [data-notes], .mtw-slide .hidden { display: none; }
+
+/* ---- Slide 28 (p28-30): TTL flow — per-slide classes from legacy <style> ---- */
+.s28-grid-pattern {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(66,165,245,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(66,165,245,0.04) 1px, transparent 1px);
+  background-size: 40px 40px; z-index: 0; pointer-events: none;
+}
+.s28-deco-circle { position: absolute; border-radius: 50%; pointer-events: none; z-index: 0; }
+.s28-case-decor {
+  position: absolute; top: 18px; right: 140px;
+  font-family: var(--font-display); font-weight: 900; font-size: 80px;
+  color: #E8EAF6; opacity: 0.6; z-index: 1; line-height: 1; pointer-events: none;
+}
+.s28-flow-row { display: flex; align-items: center; gap: 16px; justify-content: center; margin-bottom: 4px; }
+.s28-stage-card {
+  background: #FFFFFF; border-radius: 12px; padding: 14px 20px; min-width: 200px;
+  display: flex; flex-direction: column; gap: 6px; align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+.s28-stage-card.s1 { border-top: 4px solid #42A5F5; }
+.s28-stage-card.s2 { border-top: 4px solid #FFA726; }
+.s28-stage-card.s3 { border-top: 4px solid #4DB6AC; }
+.s28-stage-icon { font-size: 28px; line-height: 1; }
+.s28-stage-title { font-family: var(--font-display); font-weight: 700; font-size: 18px; color: #424242; line-height: 1.1; }
+.s28-stage-sub { font-family: var(--font-body); font-size: 16px; color: #757575; line-height: 1.2; }
+.s28-arrow { color: #BDBDBD; font-size: 24px; }
+.s28-code-card {
+  background: #0F2942; color: #E3F2FD; border-radius: 12px; padding: 20px 26px;
+  border-left: 5px solid #5C6BC0; font-family: var(--font-mono); font-size: 18px;
+  line-height: 1.7; max-width: 800px; margin: 0 auto;
+  box-shadow: 0 10px 24px rgba(15,41,66,0.25); white-space: pre; overflow: hidden;
+}
+.s28-code-card .ttl-title {
+  font-family: var(--font-display); font-weight: 700; font-size: 16px;
+  color: #9FA8DA; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px;
+  display: block;
+}
+.s28-code-card .kw { color: #82B1FF; font-weight: 600; }
+.s28-code-card .str { color: #C5E1A5; }
+.s28-code-card .com { color: #90A4AE; font-style: italic; }
+.s28-code-card .hl { background: rgba(255,167,38,0.18); padding: 1px 4px; border-radius: 3px; color: #BF360C; }
+.s28-info-row { display: flex; gap: 16px; }
+.s28-info-card { flex: 1; border-radius: 10px; padding: 14px 20px; display: flex; flex-direction: column; gap: 6px; }
+.s28-info-card.c1 { background: #E3F2FD; border-left: 5px solid #42A5F5; }
+.s28-info-card.c2 { background: #FFF8E1; border-left: 5px solid #FFA726; }
+.s28-info-card.c3 { background: #E0F2F1; border-left: 5px solid #4DB6AC; }
+.s28-info-icon { font-size: 24px; line-height: 1; }
+.s28-info-title { font-family: var(--font-display); font-weight: 700; font-size: 18px; color: #424242; }
+.s28-info-text { font-family: var(--font-body); font-size: 18px; color: #616161; line-height: 1.4; }
+
+/* ---- Slide 31 (CASE 4 intro): red-tinted pattern + image card ---- */
+.s31-grid-pattern {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(239,83,80,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(239,83,80,0.04) 1px, transparent 1px);
+  background-size: 40px 40px; z-index: 0; pointer-events: none;
+}
+.s31-deco-circle { position: absolute; border-radius: 50%; pointer-events: none; z-index: 0; }
+.s31-image-card {
+  max-width: 480px; max-height: 460px; border-radius: 16px; overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15); border: 4px solid #FFFFFF;
+}
+.s31-image-card img { width: 100%; height: 460px; object-fit: cover; display: block; }
+.s31-caption {
+  margin-top: 20px; text-align: center;
+  font-family: var(--font-italic); font-style: italic; font-size: 22px; color: #616161;
+}
+
+/* ---- Slide 32 (p32-33): Friday panic — two-column cards ---- */
+.s32-grid-pattern {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(239,83,80,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(239,83,80,0.04) 1px, transparent 1px);
+  background-size: 40px 40px; z-index: 0; pointer-events: none;
+}
+.s32-deco-circle { position: absolute; border-radius: 50%; pointer-events: none; z-index: 0; }
+.s32-col { flex: 1; display: flex; flex-direction: column; gap: 16px; justify-content: center; }
+.s32-case-card { border-radius: 14px; padding: 26px 28px; }
+.s32-card-ok { background: #E0F2F1; border-left: 6px solid #4DB6AC; }
+.s32-card-panic { background: #FFF5F5; border-left: 6px solid #EF5350; }
+.s32-card-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+.s32-card-head-title { font-family: var(--font-display); font-weight: 700; font-size: 24px; color: #424242; }
+.s32-feature-list { display: flex; flex-direction: column; gap: 12px; }
+.s32-feature-item {
+  font-family: var(--font-body); font-size: 21px; color: #424242; line-height: 1.5;
+  display: flex; align-items: center; gap: 12px;
+}
+
+/* ---- Slide 34 (p34-35): panic pane — panica image + lag card ---- */
+.s34-grid-pattern {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(239,83,80,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(239,83,80,0.04) 1px, transparent 1px);
+  background-size: 40px 40px; z-index: 0; pointer-events: none;
+}
+.s34-deco-circle { position: absolute; border-radius: 50%; pointer-events: none; z-index: 0; }
+.s34-left-pane { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.s34-left-pane img {
+  max-width: 380px; max-height: 440px; border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.18); object-fit: contain;
+}
+.s34-lag-card {
+  background: #FFF5F5; border-radius: 14px; padding: 26px 28px;
+  border-left: 6px solid #EF5350; box-shadow: 0 6px 18px rgba(239,83,80,0.10);
+}
+.s34-lag-head { display: flex; align-items: center; gap: 14px; }
+.s34-lag-head-title { font-family: var(--font-display); font-weight: 700; font-size: 24px; color: #424242; }
+.s34-lag-big {
+  font-family: var(--font-display); font-weight: 900; font-size: 48px; color: #C62828;
+  margin-top: 14px; line-height: 1.05; letter-spacing: -1px;
+}
+.s34-lag-sub { font-family: var(--font-body); font-size: 21px; color: #424242; margin-top: 8px; line-height: 1.5; }
+.s34-emotional {
+  font-family: var(--font-italic); font-style: italic; font-size: 22px;
+  color: #616161; line-height: 1.4;
+}
+
+/* ---- Slide 36: Kafka lag stats ---- */
+.s36-grid-pattern {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(239,83,80,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(239,83,80,0.04) 1px, transparent 1px);
+  background-size: 40px 40px; z-index: 0; pointer-events: none;
+}
+.s36-deco-circle { position: absolute; border-radius: 50%; pointer-events: none; z-index: 0; }
+.s36-row { display: flex; gap: 24px; }
+.s36-stat-card {
+  flex: 1; border-radius: 16px; padding: 32px 36px; display: flex; flex-direction: column;
+  gap: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+.s36-stat-card.left { background: #FFF5F5; border-left: 8px solid #EF5350; }
+.s36-stat-card.right { background: #FFF8E1; border-left: 8px solid #FFA726; }
+.s36-stat-head { display: flex; align-items: center; gap: 14px; }
+.s36-stat-head-title { font-family: var(--font-display); font-weight: 700; font-size: 24px; color: #424242; }
+.s36-stat-big { font-family: var(--font-display); font-weight: 900; font-size: 64px; line-height: 1.05; letter-spacing: -2px; }
+.s36-stat-big.red { color: #C62828; }
+.s36-stat-big.amber { color: #BF360C; }
+.s36-stat-sub { font-family: var(--font-body); font-size: 21px; color: #424242; line-height: 1.5; }
+.s36-banner {
+  background: #0F2942; border-radius: 12px; padding: 22px 28px; border-left: 5px solid #EF5350;
+  display: flex; align-items: center; gap: 16px; box-shadow: 0 8px 20px rgba(15,41,66,0.2);
+}
+.s36-banner-text { font-family: var(--font-body); font-weight: 700; font-size: 21px; color: #E3F2FD; line-height: 1.5; }
+
+/* ---- Slide 37: strange log (amber pattern, code + chips) ---- */
+.s37-grid-pattern {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(255,167,38,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,167,38,0.04) 1px, transparent 1px);
+  background-size: 40px 40px; z-index: 0; pointer-events: none;
+}
+.s37-deco-circle { position: absolute; border-radius: 50%; pointer-events: none; z-index: 0; }
+.s37-code-block {
+  background: #0F2942; color: #E3F2FD; border-radius: 14px; padding: 24px 30px;
+  border-left: 5px solid #FFA726; font-family: var(--font-mono); font-size: 18px;
+  line-height: 1.7; box-shadow: 0 10px 30px rgba(15,41,66,0.3);
+  white-space: pre; overflow: hidden;
+}
+.s37-code-block .kw { color: #82B1FF; font-weight: 600; }
+.s37-code-block .str { color: #C5E1A5; }
+.s37-code-block .com { color: #90A4AE; font-style: italic; }
+.s37-code-block .fn { color: #80DEEA; }
+.s37-code-block .hl { background: rgba(255,167,38,0.18); padding: 1px 4px; border-radius: 3px; color: #BF360C; }
+.s39-banner {
+  background: #FFFDE7; border-radius: 12px; padding: 22px 28px; border-left: 6px solid #FFA726;
+  display: flex; align-items: center; gap: 16px; box-shadow: 0 4px 14px rgba(255,167,38,0.10);
+}
+.s39-banner-text { font-family: var(--font-body); font-weight: 700; font-size: 21px; color: #424242; line-height: 1.5; }
+
+/* ---- Slide 38: Tiberius image card ---- */
+.s38-grid-pattern {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(255,167,38,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,167,38,0.04) 1px, transparent 1px);
+  background-size: 40px 40px; z-index: 0; pointer-events: none;
+}
+.s38-deco-circle { position: absolute; border-radius: 50%; pointer-events: none; z-index: 0; }
+.s38-image-card {
+  max-width: 460px; max-height: 440px; border-radius: 16px; overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.18); border: 4px solid #FFFFFF;
+}
+.s38-image-card img { width: 100%; height: 440px; object-fit: cover; display: block; }
+.s38-caption {
+  margin-top: 18px; text-align: center;
+  font-family: var(--font-italic); font-style: italic; font-size: 21px; color: #616161;
+}
+
+/* ---- Slide 40 (p40-41): hotfix + upstream ---- */
+.s40-grid-pattern {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(77,182,172,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(77,182,172,0.04) 1px, transparent 1px);
+  background-size: 40px 40px; z-index: 0; pointer-events: none;
+}
+.s40-deco-circle { position: absolute; border-radius: 50%; pointer-events: none; z-index: 0; }
+.s40-row { display: flex; gap: 24px; }
+.s40-case-card { flex: 1; border-radius: 14px; padding: 24px 26px; }
+.s40-card-hotfix { background: #E0F2F1; border-left: 6px solid #4DB6AC; }
+.s40-card-upstream { background: #E8EAF6; border-left: 6px solid #5C6BC0; }
+.s40-card-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+.s40-card-head-title { font-family: var(--font-display); font-weight: 700; font-size: 24px; color: #424242; }
+.s40-feature-list { display: flex; flex-direction: column; gap: 12px; }
+.s40-feature-item {
+  font-family: var(--font-body); font-size: 21px; color: #424242; line-height: 1.5;
+  display: flex; align-items: center; gap: 12px;
+}
+.s40-lesson-card {
+  background: #F8F9FA; border-radius: 12px; padding: 22px 26px; border-left: 6px solid #5C6BC0;
+  display: flex; align-items: center; gap: 16px; box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+}
+.s40-lesson-text { font-family: var(--font-body); font-weight: 700; font-size: 21px; color: #424242; line-height: 1.5; }
+
+/* ---- Slide 42 (p42-43): TTM comparison — arrow columns ---- */
+.s42-compare-area { flex: 1; padding: 0 50px 30px 50px; display: flex; flex-direction: column; justify-content: center; gap: 14px; position: relative; z-index: 10; }
+.s42-col-headers { display: flex; padding: 0 60px; margin-bottom: 8px; }
+.s42-col-header { flex: 1; text-align: center; font-family: var(--font-display); font-weight: 700; font-size: 24px; padding-bottom: 12px; position: relative; }
+.s42-col-header.left { color: #546E7A; }
+.s42-col-header.left::after { content: ''; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: 60px; height: 4px; background: #90A4AE; }
+.s42-col-header.right { color: #1565C0; }
+.s42-col-header.right::after { content: ''; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: 60px; height: 4px; background: #42A5F5; }
+.s42-compare-row { display: flex; align-items: center; height: 90px; position: relative; }
+.s42-side-left {
+  flex: 1; background: #F5F5F5; color: #757575; padding: 0 70px 0 30px;
+  clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+  display: flex; align-items: center; justify-content: flex-end; height: 90px; gap: 14px;
+}
+.s42-side-right {
+  flex: 1; background: #E3F2FD; color: #0D47A1; padding: 0 30px 0 70px;
+  clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 10% 100%, 0% 50%);
+  display: flex; align-items: center; justify-content: flex-start; height: 90px; gap: 14px;
+}
+.s42-keyword { font-family: var(--font-display); font-weight: 700; font-size: 24px; line-height: 1; }
+.s42-keyword.left { color: #616161; }
+.s42-keyword.right { color: #1976D2; }
+.s42-desc { font-family: var(--font-body); font-size: 18px; line-height: 1.25; }
+.s42-desc.left { color: #757575; }
+.s42-desc.right { color: #1565C0; }
+.s42-side-left .s42-desc { text-align: right; max-width: 220px; }
+.s42-dimension-circle {
+  width: 110px; height: 110px; border-radius: 50%; background: #FFFFFF; border: 4px solid #F0F7FF;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.10); display: flex; flex-direction: column;
+  align-items: center; justify-content: center; position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%); z-index: 20; padding: 4px;
+}
+.s42-dimension-circle .s42-label {
+  font-family: var(--font-display); font-weight: 700; font-size: 13px;
+  color: #546E7A; text-align: center; line-height: 1.15; margin-top: 4px;
+}
+
+/* ---- Slide 44: AI-Ready (purple, image left 45%) ---- */
+.s44-image-section { width: 45%; position: relative; overflow: hidden; }
+.s44-image-section img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.s44-overlay-gradient { position: absolute; inset: 0; background: rgba(124,92,192,0.20); pointer-events: none; }
+.s44-decorative-shape {
+  position: absolute; bottom: -50px; left: -50px; width: 200px; height: 200px;
+  border: 20px solid rgba(255,255,255,0.3); border-radius: 50%; pointer-events: none;
+}
+.s44-img-caption { position: absolute; bottom: 32px; left: 32px; color: #FFFFFF; }
+.s44-cap-1 { font-family: var(--font-display); font-weight: 700; font-size: 22px; line-height: 1.2; }
+.s44-cap-2 { font-family: var(--font-body); font-size: 18px; opacity: 0.9; margin-top: 4px; }
+.s44-note-card {
+  margin-top: 18px; background: #F3E5F5; border-radius: 10px; padding: 14px 18px;
+  border-left: 5px solid #7E57C2; display: flex; align-items: center; gap: 12px;
+}
+.s44-note-text { font-family: var(--font-body); font-weight: 700; font-size: 21px; color: #424242; line-height: 1.3; }
+.s44-driver-list { display: flex; flex-direction: column; gap: 14px; margin-top: 24px; }
+.s44-driver-card { background: #F8F9FA; padding: 18px 22px; border-radius: 10px; border-left: 5px solid #7E57C2; }
+.s44-dc-head { display: flex; align-items: center; gap: 12px; }
+.s44-dc-head h4 { font-family: var(--font-display); font-weight: 700; font-size: 22px; color: #424242; margin: 0; line-height: 1.2; }
+.s44-driver-card p { font-family: var(--font-body); font-size: 21px; color: #757575; line-height: 1.4; margin: 6px 0 0 40px; }
+
+/* ---- Slide 45 (p45-47): lessons — 3 principle cards ---- */
+.s45-content-area { flex: 1; padding: 20px 70px 40px 70px; display: flex; flex-direction: column; gap: 16px; position: relative; z-index: 10; }
+.s45-lead-line { font-family: var(--font-body); font-size: 21px; color: #757575; margin-bottom: 8px; }
+.s45-principles-row { display: flex; gap: 18px; flex: 1; }
+.s45-principle-card {
+  flex: 1; background: #FFFFFF; border-radius: 14px; padding: 24px 26px;
+  box-shadow: 0 8px 22px rgba(66,165,245,0.06); display: flex; flex-direction: column; gap: 14px;
+}
+.s45-principle-card.c1 { border-left: 6px solid #42A5F5; }
+.s45-principle-card.c2 { border-left: 6px solid #4DB6AC; }
+.s45-principle-card.c3 { border-left: 6px solid #5C6BC0; }
+.s45-o-badge {
+  font-family: var(--font-display); font-weight: 700; font-size: 13px; padding: 5px 14px;
+  border-radius: 20px; align-self: flex-start; letter-spacing: 1px;
+}
+.s45-o-badge.b1 { background: #E3F2FD; color: #1565C0; }
+.s45-o-badge.b2 { background: #E0F2F1; color: #00796B; }
+.s45-o-badge.b3 { background: #E8EAF6; color: #5C6BC0; }
+.s45-o-title { font-family: var(--font-display); font-weight: 700; font-size: 22px; color: #424242; line-height: 1.3; margin: 0; }
+.s45-kr-list { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+.s45-kr-item {
+  background: #FAFAFA; padding: 12px 16px; border-radius: 8px; display: flex;
+  align-items: center; gap: 12px; font-family: var(--font-body); font-size: 21px;
+  color: #616161; line-height: 1.3;
+}
+.s45-kr-item .mono { font-family: var(--font-mono); font-size: 18px; }
+
+/* ---- Slide 50: starter pack (QR + repo info) ---- */
+.s50-content-area { flex: 1; padding: 20px 70px 40px 70px; display: flex; gap: 30px; align-items: center; position: relative; z-index: 10; }
+.s50-qr-block { display: flex; flex-direction: column; align-items: center; gap: 12px; flex-shrink: 0; }
+.s50-qr-block img { width: 240px; height: 240px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); border-radius: 8px; display: block; }
+.s50-qr-caption {
+  font-family: var(--font-display); font-weight: 700; font-size: 16px;
+  color: #424242; letter-spacing: 1px; text-align: center;
+}
+.s50-repo-info { flex: 1; display: flex; flex-direction: column; gap: 14px; }
+.s50-repo-title { font-family: var(--font-display); font-weight: 700; font-size: 26px; color: #424242; line-height: 1.2; margin: 0; }
+.s50-feature-rows { display: flex; flex-direction: column; gap: 10px; }
+.s50-feature-row {
+  display: flex; align-items: center; gap: 12px; font-family: var(--font-body);
+  font-size: 21px; color: #424242; line-height: 1.3;
+}
+.s50-repo-url {
+  margin-top: 8px; background: #E3F2FD; padding: 12px 18px; border-radius: 8px;
+  border-left: 4px solid #42A5F5;
+}
+.s50-repo-url .mono {
+  font-family: var(--font-mono); font-size: 20px; color: #1976D2; word-break: break-all;
+}
+
 /* ---- Slide 48: effects grid (legacy .effects-grid/.effect-card) ---- */
 .s48-grid {
   flex: 1;

@@ -28,33 +28,30 @@ for (const f of readdirSync(pagesDir).filter((f) => f.endsWith('.md')).sort()) {
     if (re.test(src)) { console.error(`[lint] ${f}: BANNED — ${why}`); failed = true }
   }
 
-  // blank line AFTER an UNCLOSED HTML line = markdown-it splits the block.
-  // A line is "closed" if it starts with '<' and ends with '>' with balanced
-  // <div>/</div> counts (single-line blocks). Multi-line blocks (unclosed)
-  // followed by a blank line are the dangerous pattern.
+  // Precise check: blank line INSIDE the root .mtw-slide div = markdown-it
+  // terminates the type-6 HTML block there and mangles the rest.
   const lines = src.split('\n')
-  let htmlOpen = false
+  let depth = 0
+  let started = false
   lines.forEach((line, i) => {
-    const trimmed = line.trim()
-    if (trimmed === '') {
-      if (htmlOpen) {
-        console.error(`[lint] ${f}:${i + 1}: blank line inside HTML block (splits markdown block)`)
-        failed = true
+    if (!started) {
+      if (line.startsWith('<div class="mtw-slide"')) {
+        started = true
+        depth = (line.match(/<div/g) || []).length - (line.match(/<\/div>/g) || []).length
       }
       return
     }
-    if (trimmed.startsWith('<!--') && trimmed.endsWith('-->')) { htmlOpen = false; return }
-    if (trimmed.startsWith('<')) {
-      const opens = (trimmed.match(/<div[\s>]/g) || []).length
-      const closes = (trimmed.match(/<\/div>/g) || []).length
-      htmlOpen = trimmed.endsWith('>') ? opens > closes : true
-    } else {
-      htmlOpen = false
+    if (line.trim() === '' && depth > 0) {
+      console.error(`[lint] ${f}:${i + 1}: blank line INSIDE root div (splits markdown HTML block)`)
+      failed = true
+      return
     }
+    depth += (line.match(/<div/g) || []).length - (line.match(/<\/div>/g) || []).length
+    if (depth <= 0) started = false
   })
 
-  // min font sizes (skip 16px badge / 14px stamp by legacy exception list)
-  const exceptions = new Set([14, 16])
+  // min font sizes (legacy parity exceptions: 13px circle labels, 16px badge, 14px stamp)
+  const exceptions = new Set([13, 14, 16])
   for (const m of src.matchAll(/font-size:\s*(\d+)px/g)) {
     const px = Number(m[1])
     if (!exceptions.has(px) && px < 18) {
