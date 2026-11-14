@@ -46,12 +46,12 @@ jobs:
 
       - name: Generate version string
         # Формат: YYYYMMDD rev.<short-sha> — подставляется в __VERSION__ плейсхолдер.
-        # Паттерн заимствован из r3code/report-logs-collection-in-ai-era.
+        # working-directory: deck — пути относительны deck/.
         run: |
           VERSION="$(date -u +%Y%m%d) rev. $(echo ${{ github.sha }} | cut -c1-7)"
           echo "Version: $VERSION"
-          sed -i "s/__VERSION__/$VERSION/g" deck/slides.md deck/pages/*.md
-          grep -rq "$VERSION" deck/pages/ && echo "Version injected OK"
+          sed -i "s/__VERSION__/$VERSION/g" slides.md pages/*.md
+          grep -rq "$VERSION" pages/ && echo "Version injected OK"
 
       - name: Lint migration invariants
         # Запрещаем: CDN шрифтов/иконок, mdc:true, font-size<18px,
