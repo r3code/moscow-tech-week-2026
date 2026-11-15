@@ -73,6 +73,11 @@ jobs:
         # отдавали SPA, а не 404.
         run: cp dist/index.html dist/404.html
 
+      - name: Inject cache-bust script
+        # Inline <script> в <head> ловит 404 на JS-ассеты (старый hash после
+        # нового deploy) и перезагружает с ?v=<timestamp>. См. docs/DEPLOY.md.
+        run: node scripts/inject-cache-bust.mjs dist/index.html && node scripts/inject-cache-bust.mjs dist/404.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
