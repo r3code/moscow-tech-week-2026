@@ -33,8 +33,8 @@ lineNumbers: false
     </div>
     <div v-click="2" style="background:#F8F9FA;border-radius:14px;padding:22px 28px;border-left:6px solid #7E57C2;display:flex;align-items:center;gap:20px;box-shadow:0 2px 6px rgba(0,0,0,0.03);">
       <div style="width:48px;height:48px;border-radius:50%;background:#7E57C2;color:#FFFFFF;font-family:'Montserrat',sans-serif;font-weight:900;font-size:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">04</div>
-      <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:24px;color:#424242;">ClickStack MCP</div>
-      <div style="font-family:'PT Serif',serif;font-style:italic;font-size:21px;color:#9E9E9E;margin-left:auto;">AI-поиск по структурированным логам</div>
+      <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:24px;color:#424242;">Что это дало компании</div>
+      <div style="font-family:'PT Serif',serif;font-style:italic;font-size:21px;color:#9E9E9E;margin-left:auto;">Итоги перехода и эксплуатации в прод</div>
     </div>
     <div v-click="2" style="background:#F8F9FA;border-radius:14px;padding:22px 28px;border-left:6px solid #AB47BC;display:flex;align-items:center;gap:20px;box-shadow:0 2px 6px rgba(0,0,0,0.03);">
       <div style="width:48px;height:48px;border-radius:50%;background:#AB47BC;color:#FFFFFF;font-family:'Montserrat',sans-serif;font-weight:900;font-size:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">05</div>

@@ -20,7 +20,7 @@ lineNumbers: false
     <div style="text-align:center;">
       <div style="display:inline-flex;align-items:center;gap:12px;background:#E3F2FD;padding:12px 28px;border-radius:24px;border:2px solid #42A5F5;">
         <FAIcon name="building" :size="24" color="#1565C0" />
-        <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:24px;color:#1976D2;">Кейс ВсеИнструменты.ру</span>
+        <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:24px;color:#1976D2;">Кейс ВсеИнструменты.ру 2024-2026</span>
       </div>
     </div>
     <div style="display:flex;gap:24px;">

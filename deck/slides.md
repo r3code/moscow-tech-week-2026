@@ -33,7 +33,19 @@ src: ./pages/06-transition.md
 ---
 
 ---
+src: ./pages/06b-ref-transition.md
+---
+
+---
+src: ./pages/06c-sep-architecture.md
+---
+
+---
 src: ./pages/07-architecture.md
+---
+
+---
+src: ./pages/07b-sep-cases.md
 ---
 
 ---
@@ -89,6 +101,10 @@ src: ./pages/28-case3-ttl-flow.md
 ---
 
 ---
+src: ./pages/28b-ref-standardization.md
+---
+
+---
 src: ./pages/31-case4-friday.md
 ---
 
@@ -121,6 +137,10 @@ src: ./pages/40-case4-hotfix.md
 ---
 
 ---
+src: ./pages/28c-sep-results.md
+---
+
+---
 src: ./pages/42-ttm.md
 ---
 
@@ -134,6 +154,10 @@ src: ./pages/45-lessons.md
 
 ---
 src: ./pages/48-effects.md
+---
+
+---
+src: ./pages/42b-sep-takeaways.md
 ---
 
 ---
