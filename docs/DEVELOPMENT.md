@@ -125,14 +125,11 @@ CSS `.slidev-vclick-hidden { visibility: hidden }` + `transition: none` —
 | Highlight bg | `rgba(255,167,38,0.18)` | `.hl`, inline `background:rgba(255,167,38,0.18)` |
 | Highlight text | `#BF360C` | `.hl`, inline `color:#BF360C` |
 
-Скрипт `scripts/invert-code-colors.py` — массовая замена цветов (если
-понадобится вернуться к инверсии).
-
 ## Добавление / правка слайдов
 
 ### Новый слайд
 
-1. Создай `pages/NN-*.md` (номер = позиция в legacy-нумерации)
+1. Создай `pages/NN-*.md` (номер = позиция в порядке слайдов)
 2. Frontmatter: `layout: content|cover|case|section|end`, `canvasWidth: 1280`, `aspectRatio: 16/9`, `transition: none`, `drawings: false`, `lineNumbers: false`
 3. Контент: один `<div class="mtw-slide">` (без пустых строк внутри)
 4. `<PageBadge base="N" />` — номер страницы (см. ниже)
