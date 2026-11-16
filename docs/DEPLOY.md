@@ -24,16 +24,21 @@ Pages настроены на **Source: GitHub Actions** (Settings → Pages →
 
 Время деплоя: ~2 минуты от push до живого URL.
 
-## Экспорт PDF и PPTX
+## Экспорт PDF
 
-Запускается вручную через GitHub Actions UI:
+PDF генерируется **автоматически при каждом пуше в main** (workflow
+`export-pdf.yml`). Публикуется как GitHub Release с тегом `latest` —
+всегда один, заменяет предыдущий.
+
+**Скачивание:** https://github.com/r3code/moscow-tech-week-2026/releases/latest
+
+Артефакт также доступен в Actions (retention 30 дней).
+
+### Экспорт PPTX (вручную)
 
 1. Откройте [Actions](https://github.com/r3code/moscow-tech-week-2026/actions)
-2. Выберите workflow:
-   - **Export PDF** — PDF с `--with-clicks` (57 страниц, текст selectable)
-   - **Export PPTX (images)** — PNG per click → `python-pptx` собирает `.pptx`
-3. Нажмите **Run workflow** (или пушьте тег `v*` для автозапуска)
-4. Скачайте артефакт со страницы запуска (retention: PDF/PPTX — 30 дней, PNG — 14 дней)
+2. Выберите **Export PPTX (images)** → Run workflow
+3. Скачайте артефакт со страницы запуска (retention 30 дней)
 
 ### Альтернативно: локальный экспорт
 

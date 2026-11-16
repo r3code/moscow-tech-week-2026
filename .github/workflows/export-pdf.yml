@@ -1,16 +1,20 @@
 name: Export PDF
 
-# Ручной экспорт колоды в PDF (51 страница с --with-clicks).
-# Запуск: Actions → Export PDF → Run workflow.
-# Артефакт: mtw2026.pdf (retention 30 дней).
+# Автоматический экспорт колоды в PDF (69 страниц с --with-clicks)
+# при каждом пуше в main. PDF публикуется как GitHub Release с тегом
+# `latest` — всегда один, заменяет предыдущий. Скачивание:
+#   https://github.com/r3code/moscow-tech-week-2026/releases/latest
 
 on:
-  workflow_dispatch:
   push:
-    tags: ['v*']
+    branches: [main]
+    paths:
+      - 'deck/**'
+      - '.github/workflows/export-pdf.yml'
+  workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   export-pdf:
@@ -43,6 +47,7 @@ jobs:
           echo "Version: $VERSION"
           sed -i "s/__VERSION__/$VERSION/g" slides.md pages/*.md
           grep -rq "$VERSION" pages/ && echo "Version injected OK"
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
 
       - name: Install Chromium for Playwright
         # --with-deps тянет системные libs (libnss3, libatk, ...).
@@ -65,3 +70,24 @@ jobs:
           path: deck/dist/mtw2026.pdf
           if-no-files-found: error
           retention-days: 30
+
+      - name: Delete previous latest release
+        # Удаляем старый релиз `latest` + тег, чтобы всегда был только один PDF.
+        run: |
+          gh release delete latest --yes --cleanup-tag 2>/dev/null || echo "No previous latest release — creating first"
+
+      - name: Create latest release with PDF
+        # Публикуем PDF как asset в релизе `latest`.
+        # Тег `latest` указывает на текущий HEAD.
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create latest dist/mtw2026.pdf \
+            --title "PDF Export — $VERSION" \
+            --notes "Автоматическая сборка из commit ${{ github.sha }}
+          - Версия: $VERSION
+          - Страниц: 69 (с --with-clicks)
+          - Дата: $(date -u +%Y-%m-%d)
+
+          Скачайте **mtw2026.pdf** из Assets ниже." \
+            --latest

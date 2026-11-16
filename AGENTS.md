@@ -79,10 +79,10 @@ python3 scripts/renumber-bases.py   # после изменения v-click ко
 
 ## CI
 
-4 workflow в `.github/workflows/`:
+4 CI workflow в `.github/workflows/`:
 - `deploy.yml` — push в main → Pages (с cache-bust инъекцией)
 - `lint.yml` — PR / push → инварианты
-- `export-pdf.yml` — manual / tag v* → PDF artifact
+- `export-pdf.yml` — push в main → PDF artifact + **GitHub Release `latest`** (заменяет предыдущий)
 - `export-pptx.yml` — manual / tag v* → PPTX artifact
 
 Lint запускается ДО sed-инъекции версии (проверяет `__VERSION__` плейсхолдер).
