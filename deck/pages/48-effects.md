@@ -44,12 +44,12 @@ lineNumbers: false
       </div>
       <div class="s48-card" style="background:#FFEBEE;border-left:6px solid #EF5350;">
         <div style="display:flex;align-items:center;"><FAIcon name="coins" :size="32" color="#C62828" /></div>
-        <div class="s48-num" style="color:#C62828;">−78%</div>
-        <div class="s48-label">TCO</div>
-        <div class="s48-sub">810к → 180к руб./мес</div>
+        <div class="s48-num" style="color:#C62828;">↓×3</div>
+        <div class="s48-label">Полный TCO</div>
+        <div class="s48-sub">810к → 270к руб./мес</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- notes: Эффекты от внедрения. Доставка 99.98–100%. RTO < 60с. Сжатие 10–20x. Подключение 10 мин. Команда 1 SRE без DevOps. TCO −78%. -->
+<!-- notes: Эффекты от внедрения. Доставка 99.98–100%. Сжатие 10–20x. Подключение 10 мин. Команда 1 SRE без DevOps. Полный TCO ↓×3 (810к→270к). -->
