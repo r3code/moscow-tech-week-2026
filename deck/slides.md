@@ -101,6 +101,14 @@ src: ./pages/28-case3-ttl-flow.md
 ---
 
 ---
+src: ./pages/28a-case3-ttl-code.md
+---
+
+---
+src: ./pages/28b-case3-ttl-control.md
+---
+
+---
 src: ./pages/28b-ref-standardization.md
 ---
 

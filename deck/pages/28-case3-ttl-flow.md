@@ -20,7 +20,7 @@ lineNumbers: false
       <h1 style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:38px;color:#212121;line-height:1.1;margin:0;">Как TTL попадает в ClickHouse</h1>
     </div>
   </header>
-  <main style="flex:1;padding:20px 70px 40px 70px;display:flex;flex-direction:column;gap:20px;position:relative;z-index:10;">
+  <main style="flex:1;padding:30px 70px 50px 70px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:10;">
     <div class="s28-flow-row">
       <div class="s28-stage-card s1">
         <FAIcon name="user" :size="28" color="#1565C0" />
@@ -40,29 +40,7 @@ lineNumbers: false
         <div class="s28-stage-sub">пишет в поле LogTTL</div>
       </div>
     </div>
-    <pre v-click="1" class="s28-code-card"><span class="ttl-title">Поле в логе приложения (JSON)</span><span class="kw">{</span>
-  <span class="str">"msg"</span>: <span class="str">"Store me for 14 days!"</span>,
-  <span class="hl">"logging.vitech.team/ttl"</span>: <span class="str">"14d"</span>
-<span class="kw">}</span>
-<span class="com"># 2d · 4d · 7d · 14d · 30d · 180d</span></pre>
-    <div v-click="2" class="s28-info-row">
-      <div class="s28-info-card c1">
-        <FAIcon name="user-cog" :size="24" color="#1565C0" />
-        <div class="s28-info-title">Ответственность</div>
-        <div class="s28-info-text">на разработчиках сервиса</div>
-      </div>
-      <div class="s28-info-card c2">
-        <FAIcon name="check-circle" :size="24" color="#BF360C" />
-        <div class="s28-info-title">Валидация</div>
-        <div class="s28-info-text">Vector агрегатор проверяет значения</div>
-      </div>
-      <div class="s28-info-card c3">
-        <FAIcon name="chart-line" :size="24" color="#00796B" />
-        <div class="s28-info-title">Мониторинг</div>
-        <div class="s28-info-text">контролируем отклонения</div>
-      </div>
-    </div>
   </main>
 </div>
 
-<!-- notes: Как TTL попадает в ClickHouse. TTL — это поле в самом логе приложения, в JSON. Разработчик пишет: msg — текст сообщения, и logging.vitech.team/ttl — срок хранения. Допустимые значения: 2d, 4d, 7d, 14d, 30d, 180d. Ответственность за выбор срока — на разработчиках: они знают свой сервис. Риски контролируем двумя механизмами. Первый — валидация при приёме логов: Vector отбрасывает недопустимые значения. Второй — мониторинг: видим отклонения. -->
+<!-- notes: Как TTL попадает в ClickHouse. Разработчик пишет TTL прямо в лог. Vector Aggregator достаёт TTL из лога и валидирует. ClickHouse пишет в поле LogTTL. -->

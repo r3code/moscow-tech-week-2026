@@ -10,7 +10,7 @@ lineNumbers: false
 <div class="mtw-slide" style="background:#FFFFFF;flex-direction:column;">
   <div class="grid-pattern" aria-hidden="true"></div>
   <div class="decorative-circle" style="width:300px;height:300px;background:#E0F2F1;top:-100px;right:-90px;opacity:0.5;"></div>
-  <PageBadge base="36" />
+  <PageBadge base="39" />
   <div style="flex:1;display:flex;align-items:center;padding:40px 70px;gap:40px;position:relative;z-index:10;">
     <div style="flex:0 0 33%;display:flex;flex-direction:column;align-items:center;gap:18px;">
       <div style="background:#FAFCFF;border:1px solid #E0E0E0;border-radius:16px;padding:18px;box-shadow:0 8px 24px rgba(0,0,0,0.08);">

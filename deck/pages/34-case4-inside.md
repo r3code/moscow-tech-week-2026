@@ -11,7 +11,7 @@ lineNumbers: false
   <div class="s34-grid-pattern"></div>
   <div class="s34-deco-circle" style="width:280px;height:280px;background:rgba(239,83,80,0.05);top:-90px;right:-90px;"></div>
   <div class="s34-deco-circle" style="width:180px;height:180px;background:rgba(255,167,38,0.06);bottom:-60px;left:-50px;"></div>
-  <PageBadge base="40" />
+  <PageBadge base="43" />
   <header style="padding:40px 70px 16px 70px;display:flex;align-items:center;gap:22px;position:relative;z-index:10;">
     <div style="width:6px;height:70px;background:#EF5350;border-radius:3px;flex-shrink:0;"></div>
     <div>
