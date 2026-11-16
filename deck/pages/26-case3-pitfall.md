@@ -11,7 +11,7 @@ lineNumbers: false
   <div class="grid-pattern" aria-hidden="true"></div>
   <div class="decorative-circle" style="width:380px;height:380px;background:radial-gradient(circle,rgba(77,182,172,0.12) 0%,transparent 70%);top:-130px;left:-110px;"></div>
   <div class="decorative-circle" style="width:260px;height:260px;background:radial-gradient(circle,rgba(239,83,80,0.08) 0%,transparent 70%);bottom:-90px;right:-60px;"></div>
-  <PageBadge base="34" />
+  <PageBadge base="36" />
   <div aria-hidden="true" style="position:absolute;top:30px;right:230px;z-index:1;opacity:0.6;font-family:'Montserrat',sans-serif;font-weight:900;font-size:80px;color:#E0F2F1;letter-spacing:4px;line-height:1;">CASE 3</div>
   <header style="position:relative;z-index:10;padding:40px 70px 16px 70px;display:flex;align-items:center;justify-content:space-between;">
     <div style="display:flex;align-items:center;gap:22px;">

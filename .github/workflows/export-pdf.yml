@@ -1,16 +1,14 @@
 name: Export PDF
 
-# Автоматический экспорт колоды в PDF (69 страниц с --with-clicks)
-# при каждом пуше в main. PDF публикуется как GitHub Release с тегом
-# `latest` — всегда один, заменяет предыдущий. Скачивание:
+# Автоматический экспорт колоды в PDF (каждое v-click состояние = страница)
+# при КАЖДОМ пуше в main — параллельно с деплоем на Pages.
+# PDF публикуется как GitHub Release с тегом `latest` — всегда один,
+# заменяет предыдущий. Скачивание:
 #   https://github.com/r3code/moscow-tech-week-2026/releases/latest
 
 on:
   push:
     branches: [main]
-    paths:
-      - 'deck/**'
-      - '.github/workflows/export-pdf.yml'
   workflow_dispatch:
 
 permissions:
@@ -86,7 +84,6 @@ jobs:
             --title "PDF Export — $VERSION" \
             --notes "Автоматическая сборка из commit ${{ github.sha }}
           - Версия: $VERSION
-          - Страниц: 69 (с --with-clicks)
           - Дата: $(date -u +%Y-%m-%d)
 
           Скачайте **mtw2026.pdf** из Assets ниже." \

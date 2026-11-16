@@ -9,7 +9,7 @@ lineNumbers: false
 
 <div class="mtw-slide" style="background:#FFFFFF;flex-direction:column;">
   <div class="grid-pattern" aria-hidden="true"></div>
-  <PageBadge base="53" />
+  <PageBadge base="55" />
   <div style="padding:40px 70px 16px 70px;display:flex;align-items:center;gap:22px;position:relative;z-index:10;">
     <div style="width:6px;height:70px;background:#42A5F5;border-radius:3px;"></div>
     <h1 style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:32px;color:#212121;line-height:1.15;margin:0;">Ускорение Time-to-Market для наблюдаемости</h1>
