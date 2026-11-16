@@ -71,6 +71,10 @@ jobs:
 
       - name: Delete previous latest release
         # Удаляем старый релиз `latest` + тег, чтобы всегда был только один PDF.
+        # GH_TOKEN обязателен — без него gh молча падает по auth,
+        # а ошибка проглатывается 2>/dev/null || echo.
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           gh release delete latest --yes --cleanup-tag 2>/dev/null || echo "No previous latest release — creating first"
 
