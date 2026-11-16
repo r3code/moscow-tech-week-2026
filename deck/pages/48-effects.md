@@ -37,7 +37,7 @@ lineNumbers: false
       <div style="display:flex;align-items:center;"><FAIcon name="tachometer-alt" :size="32" color="#BF360C" /></div>
       <div class="s48-num" style="color:#BF360C;">10 мин</div>
       <div class="s48-label">Подключение сервиса</div>
-      <div class="s48-sub">было 3–5 часов</div>
+      <div class="s48-sub">было 5 часов</div>
     </div>
     <div v-click="1" class="s48-card" style="background:#F3E5F5;border-left:6px solid #AB47BC;">
       <div style="display:flex;align-items:center;"><FAIcon name="users" :size="32" color="#AB47BC" /></div>

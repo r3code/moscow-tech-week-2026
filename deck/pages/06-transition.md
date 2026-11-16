@@ -66,7 +66,7 @@ lineNumbers: false
         <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:44px;color:#00796B;line-height:1;min-width:130px;">×30</div>
         <div style="flex:1;">
           <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:21px;color:#424242;">Скорость подключения сервиса</div>
-          <div style="font-family:'Inter',sans-serif;font-size:18px;color:#9E9E9E;margin-top:2px;">3–5 ч → 10 мин</div>
+          <div style="font-family:'Inter',sans-serif;font-size:18px;color:#9E9E9E;margin-top:2px;">5 ч → 10 мин</div>
         </div>
       </div>
       <div style="background:#FFFFFF;border-radius:14px;padding:22px 26px;box-shadow:0 8px 20px rgba(0,0,0,0.06);display:flex;align-items:center;gap:18px;border-left:6px solid #5C6BC0;">
@@ -80,4 +80,4 @@ lineNumbers: false
   </div>
 </div>
 
-<!-- notes: TCO упал с 810 до 180 тысяч рублей в месяц — в 4.5 раза. Ресурсы: с 18 нод Elastic до 9 нод ClickHouse. Главное — команда: раньше нас выручал DevOps, сейчас справляемся силами двух-трёх SRE без привлечения DevOps. Подключение нового сервиса: было 3-5 часов, стало 10 минут. -->
+<!-- notes: TCO упал с 810 до 180 тысяч рублей в месяц — в 4.5 раза. Ресурсы: с 18 нод Elastic до 9 нод ClickHouse. Главное — команда: раньше нас выручал DevOps, сейчас справляемся силами двух-трёх SRE без привлечения DevOps. Подключение нового сервиса: было 5 часов, стало 10 минут. -->
