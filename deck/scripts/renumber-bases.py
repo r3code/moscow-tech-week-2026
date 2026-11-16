@@ -79,7 +79,11 @@ print(f'\nUpdated {changed} files. Total pages: {total_pages}')
 badge_component = DECK / 'components' / 'PageBadge.vue'
 if badge_component.exists():
     bc = badge_component.read_text(encoding='utf-8')
-    new_bc = re.sub(r'default: 51', f'default: {total_pages}', bc)
+    new_bc = re.sub(r'default: \d+', f'default: {total_pages}', bc)
     if new_bc != bc:
+        old_match = re.search(r'default: (\d+)', bc)
+        old_val = old_match.group(1) if old_match else '?'
         badge_component.write_text(new_bc, encoding='utf-8')
-        print(f'Updated PageBadge.vue default total: 51 → {total_pages}')
+        print(f'Updated PageBadge.vue default total: {old_val} → {total_pages}')
+    else:
+        print(f'PageBadge.vue default total already {total_pages}')

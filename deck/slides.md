@@ -93,15 +93,11 @@ src: ./pages/25-case3-solution.md
 ---
 
 ---
-src: ./pages/26-case3-pitfall.md
----
-
----
 src: ./pages/28-case3-ttl-flow.md
 ---
 
 ---
-src: ./pages/28a-case3-ttl-code.md
+src: ./pages/26-case3-pitfall.md
 ---
 
 ---

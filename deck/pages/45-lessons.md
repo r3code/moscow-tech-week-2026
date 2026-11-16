@@ -9,7 +9,7 @@ lineNumbers: false
 
 <div class="mtw-slide" style="background:#FFFFFF;flex-direction:column;">
   <div class="grid-pattern" aria-hidden="true"></div>
-  <PageBadge base="58" />
+  <PageBadge base="59" />
   <div style="padding:40px 70px 16px 70px;display:flex;align-items:center;gap:22px;position:relative;z-index:10;">
     <div style="width:6px;height:80px;background:#42A5F5;border-radius:3px;"></div>
     <h1 style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:42px;color:#212121;line-height:1.15;margin:0;">Что мы выстрадали и внедрили</h1>
@@ -36,12 +36,12 @@ lineNumbers: false
         <h3 class="s45-o-title">Защищайте инфру от логов</h3>
         <div class="s45-kr-list">
           <div class="s45-kr-item">
-            <FAIcon name="tachometer-alt" :size="22" color="#00796B" />
-            <span>Троттлинг на Vector Agent</span>
+            <FAIcon name="file-alt" :size="22" color="#00796B" />
+            <span>Блочное чтение<br><span class="mono">oldest_first: false, max_read_bytes: 16384</span></span>
           </div>
           <div class="s45-kr-item">
-            <FAIcon name="file-alt" :size="22" color="#00796B" />
-            <span><span class="mono">oldest_first: false, max_read_bytes: 16384</span></span>
+            <FAIcon name="tachometer-alt" :size="22" color="#00796B" />
+            <span>Троттлинг на Vector Agent</span>
           </div>
         </div>
       </div>
