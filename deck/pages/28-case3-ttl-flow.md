@@ -12,7 +12,7 @@ lineNumbers: false
   <div class="s28-deco-circle" style="width:280px;height:280px;background:rgba(92,107,192,0.06);top:-100px;right:-80px;"></div>
   <div class="s28-deco-circle" style="width:160px;height:160px;background:rgba(77,182,172,0.06);bottom:-50px;left:-40px;"></div>
   <div class="s28-case-decor" aria-hidden="true">CASE 3</div>
-  <PageBadge base="31" />
+  <PageBadge base="33" />
   <header style="padding:40px 70px 16px 70px;display:flex;align-items:center;gap:22px;position:relative;z-index:10;">
     <div style="width:6px;height:70px;background:#5C6BC0;border-radius:3px;flex-shrink:0;"></div>
     <div>
