@@ -46,10 +46,10 @@ lineNumbers: false
         <div style="display:flex;align-items:center;"><FAIcon name="coins" :size="32" color="#C62828" /></div>
         <div class="s48-num" style="color:#C62828;">↓×3</div>
         <div class="s48-label">Полный TCO</div>
-        <div class="s48-sub">810к → 270к руб./мес</div>
+        <div class="s48-sub">810 тыс. → 270 тыс. руб./мес</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- notes: Эффекты от внедрения. Доставка 99.98–100%. Сжатие 10–20x. Подключение 10 мин. Команда 1 SRE без DevOps. Полный TCO ↓×3 (810к→270к). -->
+<!-- notes: Эффекты от внедрения. Доставка 99.98–100%. Сжатие 10–20x. Подключение 10 мин. Команда 1 SRE без DevOps. Полный TCO ↓×3 (810 тыс. → 270 тыс. руб./мес). -->

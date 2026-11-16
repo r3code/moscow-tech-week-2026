@@ -29,12 +29,6 @@ lineNumbers: false
         <div v-click="1" style="width:25%;font-family:'Montserrat',sans-serif;font-weight:800;font-size:19px;color:#1976D2;">180 000</div>
         <div v-click="1" style="width:21%;text-align:right;"><span style="background:#E0F2F1;color:#00796B;font-family:'Inter',sans-serif;font-size:18px;font-weight:700;padding:4px 10px;border-radius:12px;">↓×4.5</span></div>
       </div>
-      <div style="display:flex;align-items:center;padding:10px 0;border-bottom:1px solid #EEEEEE;background:#FFFDE7;border-radius:8px;margin:4px -8px;padding-left:8px;padding-right:8px;">
-        <div style="width:34%;font-family:'Inter',sans-serif;font-size:18px;color:#212121;font-weight:600;line-height:1.3;">Полный TCO<br><span style="font-size:16px;color:#9E9E9E;font-weight:400;">(с доп. дисками Kafka и ресурсами агрегаторов), руб./мес</span></div>
-        <div style="width:20%;font-family:'Inter',sans-serif;font-weight:600;font-size:19px;color:#C62828;">810 000</div>
-        <div v-click="1" style="width:25%;font-family:'Montserrat',sans-serif;font-weight:800;font-size:19px;color:#1976D2;">~270 000</div>
-        <div v-click="1" style="width:21%;text-align:right;"><span style="background:#E3F2FD;color:#1565C0;font-family:'Inter',sans-serif;font-size:18px;font-weight:700;padding:4px 10px;border-radius:12px;">↓×3</span></div>
-      </div>
       <div style="display:flex;align-items:center;padding:10px 0;border-bottom:1px solid #EEEEEE;">
         <div style="width:34%;font-family:'Inter',sans-serif;font-size:18px;color:#9E9E9E;text-transform:uppercase;">Ресурсы</div>
         <div style="width:20%;font-family:'Inter',sans-serif;font-weight:600;font-size:19px;color:#C62828;">18 нод Elastic</div>
@@ -43,15 +37,16 @@ lineNumbers: false
       </div>
     </div>
     <div v-click="2" style="display:flex;">
-      <div style="flex:1;background:#FFFFFF;border-radius:14px;padding:22px 28px;box-shadow:0 6px 18px rgba(0,0,0,0.06);display:flex;align-items:center;gap:20px;border-left:6px solid #1565C0;">
-        <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:44px;color:#1565C0;line-height:1;">↓×3</div>
+      <div style="flex:1;background:#FFFFFF;border-radius:16px;padding:24px 30px;box-shadow:0 8px 24px rgba(0,0,0,0.07);display:flex;align-items:center;gap:26px;border-left:6px solid #1565C0;">
+        <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:52px;color:#1565C0;line-height:1;">↓×3</div>
         <div style="flex:1;">
-          <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:20px;color:#424242;">Полный TCO</div>
-          <div style="font-family:'Inter',sans-serif;font-size:18px;color:#9E9E9E;margin-top:4px;">было 810к · стало 270к руб./мес</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:22px;color:#424242;">Полный TCO</div>
+          <div style="font-family:'Inter',sans-serif;font-size:19px;color:#616161;margin-top:4px;">было 810 тыс. · стало ~270 тыс. руб./мес</div>
+          <div style="font-family:'Inter',sans-serif;font-size:16px;color:#9E9E9E;margin-top:2px;">с доп. дисками Kafka и ресурсами агрегаторов</div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- notes: Прямые затраты на логирование: 810к→180к (×4.5). Полный TCO с доп. дисками Kafka и ресурсами Vector-агрегаторов: 810к→270к (×3) — цифра из заголовка. Ресурсы: 18 нод Elastic → 9 нод ClickHouse. Про команду и скорость — на следующем слайде «Эволюция в Unified Log Pipeline». -->
+<!-- notes: Прямые затраты: 810 000 → 180 000 руб./мес (×4.5). Ресурсы: 18 нод Elastic → 9 нод ClickHouse (−50%). Главное — отдельно карточкой: Полный TCO с доп. дисками Kafka и ресурсами агрегаторов: 810 тыс. → ~270 тыс. руб./мес (×3) — цифра из заголовка. Про команду и скорость — на следующем слайде «Эволюция в Unified Log Pipeline». -->
