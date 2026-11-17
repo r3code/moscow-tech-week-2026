@@ -55,7 +55,7 @@ lineNumbers: false
         <div style="flex:1;">
           <div style="display:flex;align-items:center;gap:14px;">
             <FAIcon name="tachometer-alt" :size="30" color="#BF360C" />
-            <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:42px;color:#BF360C;line-height:1;">10 мин</div>
+            <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:42px;color:#BF360C;line-height:1;">↓×30</div>
           </div>
           <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:21px;color:#424242;margin-top:10px;">Подключение сервиса</div>
           <div style="font-family:'Inter',sans-serif;font-size:18px;color:#616161;margin-top:4px;">быстрее в 30 раз, было 5 часов</div>
@@ -138,4 +138,4 @@ lineNumbers: false
   </div>
 </div>
 
-<!-- notes: Эффекты от внедрения. Доставка 99.98–100% (баннер). Диски ↓×10–20: объём хранения 1× → ~1/15× (середина диапазона 10–20×). Подключение 10 мин вместо 5 часов (×30). Сопровождение 1 SRE без DevOps: 3 → 1 FTE. Полный TCO ↓×3: 810 тыс. → ~270 тыс. руб./мес. -->
+<!-- notes: Эффекты от внедрения. Доставка 99.98–100% (баннер). Диски ↓×10–20: объём хранения 1× → ~1/15× (середина диапазона 10–20×). Подключение ↓×30: 10 мин вместо 5 часов. Сопровождение 1 SRE без DevOps: 3 → 1 FTE. Полный TCO ↓×3: 810 тыс. → ~270 тыс. руб./мес. -->
