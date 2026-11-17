@@ -17,22 +17,22 @@ lineNumbers: false
   </div>
   <div style="flex:1;padding:12px 70px 24px 70px;display:flex;flex-direction:column;gap:16px;position:relative;z-index:5;">
     <div style="padding:0 8px;">
-      <div style="display:flex;font-family:'Inter',sans-serif;font-size:22px;color:#212121;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;">
+      <div style="display:flex;font-family:'Inter',sans-serif;font-size:22px;color:#212121;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid #E0E0E0;">
         <div style="width:34%;">Метрика</div>
         <div style="width:20%;">Было</div>
         <div v-click="1" style="width:25%;">Стало</div>
         <div v-click="1" style="width:21%;text-align:right;">Эффект</div>
       </div>
-      <div style="display:flex;align-items:center;padding:12px 0;">
+      <div style="display:flex;align-items:center;padding:12px 0;border-bottom:1px solid #EEEEEE;">
         <div style="width:34%;font-family:'Inter',sans-serif;font-weight:700;font-size:22px;color:#212121;line-height:1.3;">Прямые затраты<br><span style="font-weight:400;font-size:19px;color:#212121;">(выделенные ноды), руб./мес</span></div>
-        <div style="width:20%;font-family:'Inter',sans-serif;font-weight:600;font-size:23px;color:#212121;">810 000</div>
-        <div v-click="1" style="width:25%;font-family:'Montserrat',sans-serif;font-weight:800;font-size:23px;color:#212121;">180 000</div>
+        <div style="width:20%;font-family:'Inter',sans-serif;font-weight:600;font-size:23px;color:#C62828;">810 000</div>
+        <div v-click="1" style="width:25%;font-family:'Montserrat',sans-serif;font-weight:800;font-size:23px;color:#00796B;">180 000</div>
         <div v-click="1" style="width:21%;text-align:right;"><span style="background:#E0F2F1;color:#00796B;font-family:'Inter',sans-serif;font-size:22px;font-weight:700;padding:4px 12px;border-radius:12px;">↓×4.5</span></div>
       </div>
       <div style="display:flex;align-items:center;padding:12px 0;">
         <div style="width:34%;font-family:'Inter',sans-serif;font-weight:700;font-size:22px;color:#212121;">Ресурсы</div>
-        <div style="width:20%;font-family:'Inter',sans-serif;font-weight:600;font-size:23px;color:#212121;">18 нод Elastic</div>
-        <div v-click="1" style="width:25%;font-family:'Montserrat',sans-serif;font-weight:800;font-size:23px;color:#212121;">9 нод ClickHouse</div>
+        <div style="width:20%;font-family:'Inter',sans-serif;font-weight:600;font-size:23px;color:#C62828;">18 нод Elastic</div>
+        <div v-click="1" style="width:25%;font-family:'Montserrat',sans-serif;font-weight:800;font-size:23px;color:#00796B;">9 нод ClickHouse</div>
         <div v-click="1" style="width:21%;text-align:right;"><span style="background:#E0F2F1;color:#00796B;font-family:'Inter',sans-serif;font-size:22px;font-weight:700;padding:4px 12px;border-radius:12px;">−50%</span></div>
       </div>
     </div>
