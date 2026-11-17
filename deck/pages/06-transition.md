@@ -44,6 +44,23 @@ lineNumbers: false
           <div style="font-family:'Inter',sans-serif;font-size:19px;color:#616161;margin-top:4px;">было 810 тыс. · стало ~270 тыс. руб./мес</div>
           <div style="font-family:'Inter',sans-serif;font-size:16px;color:#9E9E9E;margin-top:2px;">с доп. дисками Kafka и ресурсами агрегаторов</div>
         </div>
+        <div style="flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:5px;">
+          <div style="display:flex;align-items:flex-end;gap:18px;border-bottom:1px solid #BDBDBD;padding:0 6px;">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+              <div style="font-family:'Inter',sans-serif;font-size:18px;font-weight:700;color:#C62828;">810</div>
+              <div style="width:52px;height:90px;background:#E57373;border-radius:6px 6px 0 0;"></div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+              <div style="font-family:'Inter',sans-serif;font-size:18px;font-weight:700;color:#00796B;">~270</div>
+              <div style="width:52px;height:30px;background:#00796B;border-radius:6px 6px 0 0;"></div>
+            </div>
+          </div>
+          <div style="display:flex;gap:18px;padding:0 6px;">
+            <div style="width:52px;font-family:'Inter',sans-serif;font-size:16px;color:#757575;text-align:center;">До</div>
+            <div style="width:52px;font-family:'Inter',sans-serif;font-size:16px;color:#757575;text-align:center;">После</div>
+          </div>
+          <div style="font-family:'Inter',sans-serif;font-size:16px;color:#9E9E9E;">тыс. руб./мес</div>
+        </div>
       </div>
     </div>
   </div>
