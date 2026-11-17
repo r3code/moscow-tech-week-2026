@@ -11,5 +11,5 @@ lineNumbers: false
   <div class="grid-pattern" aria-hidden="true" style="opacity:0.15;"></div>
   <div style="width:80px;height:6px;background:#4DB6AC;border-radius:3px;margin-bottom:36px;"></div>
   <h1 style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:56px;color:#FFFFFF;line-height:1.15;margin:0;text-align:center;max-width:900px;">Технические кейсы из прода</h1>
-  <PageBadge base="18" style="top:30px;right:30px;" />
+  <PageBadge base="18" />
 </div>

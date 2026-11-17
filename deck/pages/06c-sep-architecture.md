@@ -11,5 +11,5 @@ lineNumbers: false
   <div class="grid-pattern" aria-hidden="true" style="opacity:0.15;"></div>
   <div style="width:80px;height:6px;background:#42A5F5;border-radius:3px;margin-bottom:36px;"></div>
   <h1 style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:56px;color:#FFFFFF;line-height:1.15;margin:0;text-align:center;max-width:900px;">Архитектура сбора логов</h1>
-  <PageBadge base="16" style="top:30px;right:30px;" />
+  <PageBadge base="16" />
 </div>

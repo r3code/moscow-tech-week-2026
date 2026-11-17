@@ -53,7 +53,7 @@ lineNumbers: false
       </div>
     </div>
   </div>
-  <PageBadge base="59" style="top:22px;right:30px;" />
+  <PageBadge base="59" />
 </div>
 
 <!-- notes: AI-Ready Observability — официальный MCP-сервер. Поиск логов стал возможен за счёт стандартизации OTel и применения ClickStack как средства просмотра логов. ClickStack знает схему OTel и строит SQL-запросы по полям Attributes и Resource. MCP-ассистент строит запрос вида SELECT body FROM logs WHERE resource.service_name = 'X'. Не угадывает поля, потому что схема формально описана. -->
